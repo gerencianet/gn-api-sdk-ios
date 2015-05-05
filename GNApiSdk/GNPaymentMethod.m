@@ -7,12 +7,13 @@
 //
 
 #import "GNPaymentMethod.h"
+#import "GNInstallment.h"
 
 @implementation GNPaymentMethod
 
-- (instancetype)initWithJSON:(NSJSONSerialization *)json {
+- (instancetype)initWithMethod:(NSString *)methodName JSON:(NSJSONSerialization *)json {
     self = [super init];
-    
+    _methodName = methodName;
     NSJSONSerialization *methodJSON = [json valueForKey:@"method"];
     if(methodJSON){
         _total = [methodJSON valueForKey:@"total"];
@@ -21,7 +22,13 @@
         _total = [methodJSON valueForKey:@"total"];
         _interestPercentage = [methodJSON valueForKey:@"interest_percentage"];
         
-        
+        NSMutableArray *installments = [[NSMutableArray alloc] init];
+        NSArray *installmentsData = [methodJSON valueForKey:@"installments"];
+        for (NSJSONSerialization *installmentJSON in installmentsData) {
+            GNInstallment *installment = [[GNInstallment alloc] initWithJSON:installmentJSON];
+            [installments addObject:installment];
+        }
+        _installments = installments;
     }
     return self;
 }

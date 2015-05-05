@@ -7,3 +7,4 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GNApiEndpoints.h"

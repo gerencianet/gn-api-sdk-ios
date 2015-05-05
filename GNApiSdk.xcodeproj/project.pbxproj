@@ -16,6 +16,18 @@
 		FF62F4CB1AF8DAB00060DF03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF62F4C31AF8DAB00060DF03 /* main.m */; };
 		FF62F4CC1AF8DAB00060DF03 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF62F4C51AF8DAB00060DF03 /* ViewController.m */; };
 		FF62F4D01AF8DBA10060DF03 /* GNPaymentMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = FF62F4CF1AF8DBA10060DF03 /* GNPaymentMethod.m */; };
+		FFA4B5E21AF8E16800C50DAB /* GNToken.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA4B5E11AF8E16800C50DAB /* GNToken.m */; };
+		FFA4B5E51AF8E95200C50DAB /* GNInstallment.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA4B5E41AF8E95200C50DAB /* GNInstallment.m */; };
+		FFA4B5E81AF8EB6000C50DAB /* GNPaymentToken.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA4B5E71AF8EB6000C50DAB /* GNPaymentToken.m */; };
+		FFA4B5EB1AF8EC6000C50DAB /* GNMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA4B5EA1AF8EC6000C50DAB /* GNMethod.m */; };
+		FFA4B5EE1AF8ED8000C50DAB /* GNError.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA4B5ED1AF8ED8000C50DAB /* GNError.m */; };
+		FFA4B5F41AF8F2E200C50DAB /* GNBolPaymentMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA4B5F31AF8F2E200C50DAB /* GNBolPaymentMethod.m */; };
+		FFA4B5F71AF8F32300C50DAB /* GNCreditCardPaymentMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA4B5F61AF8F32300C50DAB /* GNCreditCardPaymentMethod.m */; };
+		FFA4B5FA1AF8F33F00C50DAB /* GNCreditCard.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA4B5F91AF8F33F00C50DAB /* GNCreditCard.m */; };
+		FFA4B5FE1AF8F53600C50DAB /* GNConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA4B5FD1AF8F53600C50DAB /* GNConfig.m */; };
+		FFA4B6071AF8FB4400C50DAB /* GNApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA4B6061AF8FB4400C50DAB /* GNApiClient.m */; };
+		FFA4B60A1AF9134200C50DAB /* GNApiAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA4B6091AF9134200C50DAB /* GNApiAuth.m */; };
+		FFA4B60D1AF9137E00C50DAB /* GNApiEndpoints.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA4B60C1AF9137E00C50DAB /* GNApiEndpoints.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +47,30 @@
 		FF62F4CE1AF8DBA10060DF03 /* GNPaymentMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNPaymentMethod.h; sourceTree = "<group>"; };
 		FF62F4CF1AF8DBA10060DF03 /* GNPaymentMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNPaymentMethod.m; sourceTree = "<group>"; };
 		FF62F4D11AF8DBCF0060DF03 /* GNApiSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNApiSdk.h; sourceTree = "<group>"; };
+		FFA4B5E01AF8E16800C50DAB /* GNToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNToken.h; sourceTree = "<group>"; };
+		FFA4B5E11AF8E16800C50DAB /* GNToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNToken.m; sourceTree = "<group>"; };
+		FFA4B5E31AF8E95200C50DAB /* GNInstallment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNInstallment.h; sourceTree = "<group>"; };
+		FFA4B5E41AF8E95200C50DAB /* GNInstallment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNInstallment.m; sourceTree = "<group>"; };
+		FFA4B5E61AF8EB6000C50DAB /* GNPaymentToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNPaymentToken.h; sourceTree = "<group>"; };
+		FFA4B5E71AF8EB6000C50DAB /* GNPaymentToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNPaymentToken.m; sourceTree = "<group>"; };
+		FFA4B5E91AF8EC6000C50DAB /* GNMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNMethod.h; sourceTree = "<group>"; };
+		FFA4B5EA1AF8EC6000C50DAB /* GNMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNMethod.m; sourceTree = "<group>"; };
+		FFA4B5EC1AF8ED8000C50DAB /* GNError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNError.h; sourceTree = "<group>"; };
+		FFA4B5ED1AF8ED8000C50DAB /* GNError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNError.m; sourceTree = "<group>"; };
+		FFA4B5F21AF8F2E200C50DAB /* GNBolPaymentMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNBolPaymentMethod.h; sourceTree = "<group>"; };
+		FFA4B5F31AF8F2E200C50DAB /* GNBolPaymentMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNBolPaymentMethod.m; sourceTree = "<group>"; };
+		FFA4B5F51AF8F32300C50DAB /* GNCreditCardPaymentMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNCreditCardPaymentMethod.h; sourceTree = "<group>"; };
+		FFA4B5F61AF8F32300C50DAB /* GNCreditCardPaymentMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNCreditCardPaymentMethod.m; sourceTree = "<group>"; };
+		FFA4B5F81AF8F33F00C50DAB /* GNCreditCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNCreditCard.h; sourceTree = "<group>"; };
+		FFA4B5F91AF8F33F00C50DAB /* GNCreditCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNCreditCard.m; sourceTree = "<group>"; };
+		FFA4B5FC1AF8F53600C50DAB /* GNConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNConfig.h; sourceTree = "<group>"; };
+		FFA4B5FD1AF8F53600C50DAB /* GNConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNConfig.m; sourceTree = "<group>"; };
+		FFA4B6051AF8FB4400C50DAB /* GNApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNApiClient.h; sourceTree = "<group>"; };
+		FFA4B6061AF8FB4400C50DAB /* GNApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNApiClient.m; sourceTree = "<group>"; };
+		FFA4B6081AF9134200C50DAB /* GNApiAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNApiAuth.h; sourceTree = "<group>"; };
+		FFA4B6091AF9134200C50DAB /* GNApiAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNApiAuth.m; sourceTree = "<group>"; };
+		FFA4B60B1AF9137E00C50DAB /* GNApiEndpoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNApiEndpoints.h; sourceTree = "<group>"; };
+		FFA4B60C1AF9137E00C50DAB /* GNApiEndpoints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNApiEndpoints.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,10 +141,50 @@
 			isa = PBXGroup;
 			children = (
 				FF62F4D11AF8DBCF0060DF03 /* GNApiSdk.h */,
-				FF62F4CE1AF8DBA10060DF03 /* GNPaymentMethod.h */,
-				FF62F4CF1AF8DBA10060DF03 /* GNPaymentMethod.m */,
+				FFA4B5FB1AF8F52000C50DAB /* endpoints */,
+				FFA4B5DF1AF8DF8700C50DAB /* models */,
 			);
 			path = GNApiSdk;
+			sourceTree = "<group>";
+		};
+		FFA4B5DF1AF8DF8700C50DAB /* models */ = {
+			isa = PBXGroup;
+			children = (
+				FF62F4CE1AF8DBA10060DF03 /* GNPaymentMethod.h */,
+				FF62F4CF1AF8DBA10060DF03 /* GNPaymentMethod.m */,
+				FFA4B5E01AF8E16800C50DAB /* GNToken.h */,
+				FFA4B5E11AF8E16800C50DAB /* GNToken.m */,
+				FFA4B5E31AF8E95200C50DAB /* GNInstallment.h */,
+				FFA4B5E41AF8E95200C50DAB /* GNInstallment.m */,
+				FFA4B5E61AF8EB6000C50DAB /* GNPaymentToken.h */,
+				FFA4B5E71AF8EB6000C50DAB /* GNPaymentToken.m */,
+				FFA4B5E91AF8EC6000C50DAB /* GNMethod.h */,
+				FFA4B5EA1AF8EC6000C50DAB /* GNMethod.m */,
+				FFA4B5EC1AF8ED8000C50DAB /* GNError.h */,
+				FFA4B5ED1AF8ED8000C50DAB /* GNError.m */,
+				FFA4B5F21AF8F2E200C50DAB /* GNBolPaymentMethod.h */,
+				FFA4B5F31AF8F2E200C50DAB /* GNBolPaymentMethod.m */,
+				FFA4B5F51AF8F32300C50DAB /* GNCreditCardPaymentMethod.h */,
+				FFA4B5F61AF8F32300C50DAB /* GNCreditCardPaymentMethod.m */,
+				FFA4B5F81AF8F33F00C50DAB /* GNCreditCard.h */,
+				FFA4B5F91AF8F33F00C50DAB /* GNCreditCard.m */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		FFA4B5FB1AF8F52000C50DAB /* endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				FFA4B5FC1AF8F53600C50DAB /* GNConfig.h */,
+				FFA4B5FD1AF8F53600C50DAB /* GNConfig.m */,
+				FFA4B60B1AF9137E00C50DAB /* GNApiEndpoints.h */,
+				FFA4B60C1AF9137E00C50DAB /* GNApiEndpoints.m */,
+				FFA4B6081AF9134200C50DAB /* GNApiAuth.h */,
+				FFA4B6091AF9134200C50DAB /* GNApiAuth.m */,
+				FFA4B6051AF8FB4400C50DAB /* GNApiClient.h */,
+				FFA4B6061AF8FB4400C50DAB /* GNApiClient.m */,
+			);
+			name = endpoints;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,9 +294,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF62F4D01AF8DBA10060DF03 /* GNPaymentMethod.m in Sources */,
+				FFA4B5E21AF8E16800C50DAB /* GNToken.m in Sources */,
 				FF62F4CC1AF8DAB00060DF03 /* ViewController.m in Sources */,
+				FFA4B6071AF8FB4400C50DAB /* GNApiClient.m in Sources */,
+				FFA4B5F71AF8F32300C50DAB /* GNCreditCardPaymentMethod.m in Sources */,
+				FFA4B5EB1AF8EC6000C50DAB /* GNMethod.m in Sources */,
+				FFA4B5FE1AF8F53600C50DAB /* GNConfig.m in Sources */,
+				FFA4B60A1AF9134200C50DAB /* GNApiAuth.m in Sources */,
 				FF62F4CB1AF8DAB00060DF03 /* main.m in Sources */,
+				FFA4B5E51AF8E95200C50DAB /* GNInstallment.m in Sources */,
+				FFA4B5FA1AF8F33F00C50DAB /* GNCreditCard.m in Sources */,
 				FF62F4C61AF8DAB00060DF03 /* AppDelegate.m in Sources */,
+				FFA4B5E81AF8EB6000C50DAB /* GNPaymentToken.m in Sources */,
+				FFA4B5F41AF8F2E200C50DAB /* GNBolPaymentMethod.m in Sources */,
+				FFA4B60D1AF9137E00C50DAB /* GNApiEndpoints.m in Sources */,
+				FFA4B5EE1AF8ED8000C50DAB /* GNError.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
