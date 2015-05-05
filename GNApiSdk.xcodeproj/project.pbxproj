@@ -1,0 +1,375 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A9D2CC45518E2CD452D1DDD /* libPods-GNApiSdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C59FE9B22783C1CA1F8A137 /* libPods-GNApiSdk.a */; };
+		FF62F4C61AF8DAB00060DF03 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF62F4BC1AF8DAB00060DF03 /* AppDelegate.m */; };
+		FF62F4C71AF8DAB00060DF03 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF62F4BD1AF8DAB00060DF03 /* LaunchScreen.xib */; };
+		FF62F4C81AF8DAB00060DF03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF62F4BF1AF8DAB00060DF03 /* Main.storyboard */; };
+		FF62F4C91AF8DAB00060DF03 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF62F4C11AF8DAB00060DF03 /* Images.xcassets */; };
+		FF62F4CA1AF8DAB00060DF03 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF62F4C21AF8DAB00060DF03 /* Info.plist */; };
+		FF62F4CB1AF8DAB00060DF03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF62F4C31AF8DAB00060DF03 /* main.m */; };
+		FF62F4CC1AF8DAB00060DF03 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF62F4C51AF8DAB00060DF03 /* ViewController.m */; };
+		FF62F4D01AF8DBA10060DF03 /* GNPaymentMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = FF62F4CF1AF8DBA10060DF03 /* GNPaymentMethod.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5C59FE9B22783C1CA1F8A137 /* libPods-GNApiSdk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GNApiSdk.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9264654FDF8F10EB1B4E5563 /* Pods-GNApiSdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GNApiSdk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GNApiSdk/Pods-GNApiSdk.debug.xcconfig"; sourceTree = "<group>"; };
+		D131B6D8DB6BC5392AB75770 /* Pods-GNApiSdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GNApiSdk.release.xcconfig"; path = "Pods/Target Support Files/Pods-GNApiSdk/Pods-GNApiSdk.release.xcconfig"; sourceTree = "<group>"; };
+		FF62F47E1AF8DA540060DF03 /* GNApiSdk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GNApiSdk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF62F4BB1AF8DAB00060DF03 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FF62F4BC1AF8DAB00060DF03 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FF62F4BE1AF8DAB00060DF03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		FF62F4C01AF8DAB00060DF03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FF62F4C11AF8DAB00060DF03 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FF62F4C21AF8DAB00060DF03 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF62F4C31AF8DAB00060DF03 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FF62F4C41AF8DAB00060DF03 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FF62F4C51AF8DAB00060DF03 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FF62F4CE1AF8DBA10060DF03 /* GNPaymentMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNPaymentMethod.h; sourceTree = "<group>"; };
+		FF62F4CF1AF8DBA10060DF03 /* GNPaymentMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNPaymentMethod.m; sourceTree = "<group>"; };
+		FF62F4D11AF8DBCF0060DF03 /* GNApiSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNApiSdk.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FF62F47B1AF8DA540060DF03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A9D2CC45518E2CD452D1DDD /* libPods-GNApiSdk.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3EF397A9958AE78D2D85B86D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C59FE9B22783C1CA1F8A137 /* libPods-GNApiSdk.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7E6966936A70EFDCB999420C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9264654FDF8F10EB1B4E5563 /* Pods-GNApiSdk.debug.xcconfig */,
+				D131B6D8DB6BC5392AB75770 /* Pods-GNApiSdk.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FF62F4751AF8DA540060DF03 = {
+			isa = PBXGroup;
+			children = (
+				FF62F4CD1AF8DBA10060DF03 /* GNApiSdk */,
+				FF62F4BA1AF8DAB00060DF03 /* Example */,
+				FF62F47F1AF8DA540060DF03 /* Products */,
+				7E6966936A70EFDCB999420C /* Pods */,
+				3EF397A9958AE78D2D85B86D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FF62F47F1AF8DA540060DF03 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF62F47E1AF8DA540060DF03 /* GNApiSdk.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF62F4BA1AF8DAB00060DF03 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				FF62F4BB1AF8DAB00060DF03 /* AppDelegate.h */,
+				FF62F4BC1AF8DAB00060DF03 /* AppDelegate.m */,
+				FF62F4BD1AF8DAB00060DF03 /* LaunchScreen.xib */,
+				FF62F4BF1AF8DAB00060DF03 /* Main.storyboard */,
+				FF62F4C11AF8DAB00060DF03 /* Images.xcassets */,
+				FF62F4C21AF8DAB00060DF03 /* Info.plist */,
+				FF62F4C31AF8DAB00060DF03 /* main.m */,
+				FF62F4C41AF8DAB00060DF03 /* ViewController.h */,
+				FF62F4C51AF8DAB00060DF03 /* ViewController.m */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		FF62F4CD1AF8DBA10060DF03 /* GNApiSdk */ = {
+			isa = PBXGroup;
+			children = (
+				FF62F4D11AF8DBCF0060DF03 /* GNApiSdk.h */,
+				FF62F4CE1AF8DBA10060DF03 /* GNPaymentMethod.h */,
+				FF62F4CF1AF8DBA10060DF03 /* GNPaymentMethod.m */,
+			);
+			path = GNApiSdk;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FF62F47D1AF8DA540060DF03 /* GNApiSdk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF62F4A11AF8DA540060DF03 /* Build configuration list for PBXNativeTarget "GNApiSdk" */;
+			buildPhases = (
+				02DF178D307E8153C8880EC0 /* Check Pods Manifest.lock */,
+				FF62F47A1AF8DA540060DF03 /* Sources */,
+				FF62F47B1AF8DA540060DF03 /* Frameworks */,
+				FF62F47C1AF8DA540060DF03 /* Resources */,
+				D3D9EA106F269025130BD68F /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GNApiSdk;
+			productName = GNApiSdk;
+			productReference = FF62F47E1AF8DA540060DF03 /* GNApiSdk.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FF62F4761AF8DA540060DF03 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = Gerencianet;
+				TargetAttributes = {
+					FF62F47D1AF8DA540060DF03 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = FF62F4791AF8DA540060DF03 /* Build configuration list for PBXProject "GNApiSdk" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FF62F4751AF8DA540060DF03;
+			productRefGroup = FF62F47F1AF8DA540060DF03 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF62F47D1AF8DA540060DF03 /* GNApiSdk */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FF62F47C1AF8DA540060DF03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF62F4CA1AF8DAB00060DF03 /* Info.plist in Resources */,
+				FF62F4C91AF8DAB00060DF03 /* Images.xcassets in Resources */,
+				FF62F4C71AF8DAB00060DF03 /* LaunchScreen.xib in Resources */,
+				FF62F4C81AF8DAB00060DF03 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02DF178D307E8153C8880EC0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D3D9EA106F269025130BD68F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GNApiSdk/Pods-GNApiSdk-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FF62F47A1AF8DA540060DF03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF62F4D01AF8DBA10060DF03 /* GNPaymentMethod.m in Sources */,
+				FF62F4CC1AF8DAB00060DF03 /* ViewController.m in Sources */,
+				FF62F4CB1AF8DAB00060DF03 /* main.m in Sources */,
+				FF62F4C61AF8DAB00060DF03 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FF62F4BD1AF8DAB00060DF03 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF62F4BE1AF8DAB00060DF03 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		FF62F4BF1AF8DAB00060DF03 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF62F4C01AF8DAB00060DF03 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FF62F49F1AF8DA540060DF03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FF62F4A01AF8DA540060DF03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FF62F4A21AF8DA540060DF03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9264654FDF8F10EB1B4E5563 /* Pods-GNApiSdk.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FF62F4A31AF8DA540060DF03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D131B6D8DB6BC5392AB75770 /* Pods-GNApiSdk.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF62F4791AF8DA540060DF03 /* Build configuration list for PBXProject "GNApiSdk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF62F49F1AF8DA540060DF03 /* Debug */,
+				FF62F4A01AF8DA540060DF03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF62F4A11AF8DA540060DF03 /* Build configuration list for PBXNativeTarget "GNApiSdk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF62F4A21AF8DA540060DF03 /* Debug */,
+				FF62F4A31AF8DA540060DF03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FF62F4761AF8DA540060DF03 /* Project object */;
+}
