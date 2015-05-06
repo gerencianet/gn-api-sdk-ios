@@ -32,14 +32,21 @@ NSString *const kGNApiBaseUrlSandbox = @"http://127.0.0.1:4400";
             if(err){
                 gnApiErr = [[GNError alloc] initWithCode:@(500) message:@"Invalid response data."];
             }
+            else if([json valueForKey:@"error"]){
+                gnApiErr = [[GNError alloc] initWithJSON:json];
+                json = nil;
+            }
             callback(json, gnApiErr);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if(callback){
-            NSError *err = nil;
-            NSJSONSerialization *jsonErr = [NSJSONSerialization JSONObjectWithData:operation.responseData options:NSJSONReadingMutableContainers error:&err];
-            GNError *gnApiErr = nil;
-            if(!err){
+            NSError *err;
+            NSJSONSerialization *jsonErr;
+            GNError *gnApiErr;
+            if(operation.responseData){
+                jsonErr = [NSJSONSerialization JSONObjectWithData:operation.responseData options:NSJSONReadingMutableContainers error:&err];
+            }
+            if(!err && jsonErr){
                 gnApiErr = [[GNError alloc] initWithJSON:jsonErr];
             } else {
                 gnApiErr = [[GNError alloc] initWithCode:@(500) message:@"Invalid response data."];

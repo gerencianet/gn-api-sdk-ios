@@ -13,16 +13,16 @@
 NSString *const kGNApiRoutePaymentMethods = @"/payment/methods";
 NSString *const kGNApiRouteSaveCard = @"/card";
 
-- (void)fetchPaymentMethods:(GNMethod *)method delegate:(id<GNApiEndpointsDelegate>)delegate {
+- (void)fetchPaymentMethods:(GNMethod *)method {
     [self fetchPaymentMethods:method completion:^(GNPaymentMethod *paymentMethod, GNError *error) {
-        if([delegate respondsToSelector:@selector(gnApiFetchPaymentMethodsFinished:error:)]){
-            [delegate gnApiFetchPaymentMethodsFinished:paymentMethod error:error];
+        if(_delegate && [_delegate respondsToSelector:@selector(gnApiFetchPaymentMethodsFinished:error:)]){
+            [_delegate gnApiFetchPaymentMethodsFinished:paymentMethod error:error];
         }
     }];
 }
 
 - (void)fetchPaymentMethods:(GNMethod *)method completion:(void (^)(GNPaymentMethod *paymentMethod, GNError *error))completion {
-    NSDictionary *params = @{@"data": [self getJSONStringFromDictionary:@{@"method": method.name, @"total": method.total}]};
+    NSDictionary *params = [self encapsulateParams: @{@"method": method.name, @"total": method.total}];
     [self post:kGNApiRoutePaymentMethods params:params callback:^(NSJSONSerialization *json, GNError *error) {
         if(completion){
             GNPaymentMethod *payMethod;
@@ -32,6 +32,38 @@ NSString *const kGNApiRouteSaveCard = @"/card";
             completion(payMethod, error);
         }
     }];
+}
+
+- (void)paymentTokenForCreditCard:(GNCreditCard *)creditCard {
+    [self paymentTokenForCreditCard:creditCard completion:^(GNPaymentToken *paymentToken, GNError *error) {
+        if(_delegate && [_delegate respondsToSelector:@selector(gnApiPaymentTokenForCreditCardFinished:error:)]){
+            [_delegate gnApiPaymentTokenForCreditCardFinished:paymentToken error:error];
+        }
+    }];
+}
+
+- (void)paymentTokenForCreditCard:(GNCreditCard *)creditCard completion:(void (^)(GNPaymentToken *, GNError *))completion {
+    NSDictionary *params = [self encapsulateParams: @{
+                                                      @"brand": creditCard.brand,
+                                                      @"number": creditCard.number,
+                                                      @"cvv": creditCard.cvv,
+                                                      @"expiration_month": creditCard.expirationMonth,
+                                                      @"expiration_year": creditCard.expirationYear
+                                                    }];
+    [self post:kGNApiRouteSaveCard params:params callback:^(NSJSONSerialization *json, GNError *error) {
+        if(completion){
+            GNPaymentToken *paymentToken;
+            if(!error){
+                paymentToken = [[GNPaymentToken alloc] initWithJSON:json];
+            }
+            completion(paymentToken, error);
+        }
+    }];
+}
+
+
+- (NSDictionary *) encapsulateParams:(NSDictionary *)params {
+    return @{@"data":[self getJSONStringFromDictionary:params]};
 }
 
 - (NSString *) getJSONStringFromDictionary:(NSDictionary *)dict {

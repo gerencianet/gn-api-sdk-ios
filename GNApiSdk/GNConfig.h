@@ -12,13 +12,10 @@
 
 @property (strong, nonatomic) NSString *clientId;
 @property (strong, nonatomic) NSString *clientSecret;
-@property (strong, nonatomic) NSString *grantType;
+@property (strong, nonatomic, readonly) NSString *grantType;
 @property (nonatomic) BOOL sandbox;
 
 
 - (instancetype) initWithClientId:(NSString *)clientId clientSecret:(NSString *)clientSecret;
-
-
-extern NSString *const kGNConfigGrantTypeClientCredentials;
 
 @end

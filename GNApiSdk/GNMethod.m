@@ -10,6 +10,16 @@
 
 @implementation GNMethod
 
+NSString *const kGNMethodNameVisa = @"visa";
+NSString *const kGNMethodNameMasterCard = @"mastercard";
+NSString *const kGNMethodNameAmex = @"amex";
+NSString *const kGNMethodNameDiners = @"diners";
+NSString *const kGNMethodNameDiscover = @"discover";
+NSString *const kGNMethodNameJCB = @"jcb";
+NSString *const kGNMethodNameElo = @"elo";
+NSString *const kGNMethodNameAura = @"aura";
+NSString *const kGNMethodNameBoleto = @"bol";
+
 - (instancetype)initWithName:(NSString *)name total:(NSNumber *)total {
     self = [super init];
     _name = name;

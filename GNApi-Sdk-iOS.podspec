@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
     s.version      = "0.1.0"
     s.summary      = "A simple lib for easy integration of your mobile app with the payment services provided by Gerencianet."
     s.homepage     = "https://github.com/thomazfeitoza/gn-api-sdk-ios"
-    s.license      = { :type => "MIT", :file => "LICENSE" }
+    s.license      = { :type => "Apache License, Version 2.0", :file => "LICENSE" }
     s.author       = { "Thomaz Feitoza" => "thomazfeitoza@gmail.com"}
     s.source       = { :git => "https://github.com/thomazfeitoza/gn-api-sdk-ios.git", :tag => "0.1.0" }
     s.source_files  = "GNApiSdk", "GNApiSdk/*.{h,m}"

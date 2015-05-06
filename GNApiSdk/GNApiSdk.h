@@ -8,3 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "GNApiEndpoints.h"
+#import "GNConfig.h"
+#import "GNPaymentMethod.h"
+#import "GNToken.h"
+#import "GNInstallment.h"
+#import "GNPaymentToken.h"
+#import "GNMethod.h"
+#import "GNError.h"
+#import "GNCreditCard.h"

@@ -12,6 +12,8 @@
 @interface GNApiAuth ()
 
 @property (strong, nonatomic) GNToken *token;
+@property (nonatomic) BOOL isAuthenticating;
+@property (strong, nonatomic) NSMutableArray *requestQueue;
 
 @end
 
@@ -22,6 +24,8 @@ NSString *const kGNApiRouteAuth = @"/authorize";
 
 - (instancetype)initWithConfig:(GNConfig *)config {
     self = [super initWithConfig:config];
+    self.isAuthenticating = NO;
+    self.requestQueue = [[NSMutableArray alloc] init];
     return self;
 }
 
@@ -43,19 +47,39 @@ NSString *const kGNApiRouteAuth = @"/authorize";
     return paramWithAuth;
 }
 
+- (NSDictionary *) dictionaryFromRequest:(NSString *)route params:(NSDictionary *)params callback:(void (^)(NSJSONSerialization *, GNError *))callback {
+    return @{
+             @"route":route,
+             @"params":params,
+             @"callback":callback
+             };
+}
+
 - (void) post:(NSString *)route params:(NSDictionary *)params callback:(void (^)(NSJSONSerialization *, GNError *))callback {
     if([self needsAuthorization]){
-        [super post:kGNApiRouteAuth params:[self authRequestData] callback:^(NSJSONSerialization *json, GNError *error){
-            if(!error){
-                _token = [[GNToken alloc] initWithJSON:json];
-                [super post:route params:[self requestParamsWithToken:params] callback:callback];
-            }
-            else {
-                if(callback){
-                    callback(nil, error);
+        NSDictionary *requestDictionary = [self dictionaryFromRequest:route params:params callback:callback];
+        [_requestQueue addObject:requestDictionary];
+        if(!_isAuthenticating){
+            _isAuthenticating = YES;
+            [super post:kGNApiRouteAuth params:[self authRequestData] callback:^(NSJSONSerialization *json, GNError *error){
+                self.isAuthenticating = NO;
+                if(!error){
+                    _token = [[GNToken alloc] initWithJSON:json];
+                    for (NSDictionary *request in _requestQueue) {
+                        NSString *route = [request valueForKey:@"route"];
+                        NSDictionary *params = [request valueForKey:@"params"];
+                        id callback = [request valueForKey:@"callback"];
+                        [super post:route params:[self requestParamsWithToken:params] callback:callback];
+                    }
+                    [_requestQueue removeAllObjects];
                 }
-            }
-        }];
+                else {
+                    if(callback){
+                        callback(nil, error);
+                    }
+                }
+            }];
+        }
     }
     else {
         [super post:route params:[self requestParamsWithToken:params] callback:callback];

@@ -15,4 +15,15 @@
 
 - (instancetype) initWithName:(NSString *)name total:(NSNumber *)number;
 
+
+extern NSString *const kGNMethodNameVisa;
+extern NSString *const kGNMethodNameMasterCard;
+extern NSString *const kGNMethodNameAmex;
+extern NSString *const kGNMethodNameDiners;
+extern NSString *const kGNMethodNameDiscover;
+extern NSString *const kGNMethodNameJCB;
+extern NSString *const kGNMethodNameElo;
+extern NSString *const kGNMethodNameAura;
+extern NSString *const kGNMethodNameBoleto;
+
 @end
