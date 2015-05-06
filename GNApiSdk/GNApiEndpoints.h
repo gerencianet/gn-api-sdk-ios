@@ -18,7 +18,7 @@
 
 @optional
 - (void) gnApiFetchPaymentMethodsFinished:(GNPaymentMethod *)paymentMethod error:(GNError *)error;
-- (void) gnApiPaymentTokenForCreditCardFinished:(GNPaymentToken *)paymentMethod error:(GNError *)error;
+- (void) gnApiPaymentTokenForCreditCardFinished:(GNPaymentToken *)paymentToken error:(GNError *)error;
 
 @end
 
