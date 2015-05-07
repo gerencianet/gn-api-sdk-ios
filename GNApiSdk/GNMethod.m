@@ -23,7 +23,7 @@ NSString *const kGNMethodNameBoleto = @"bol";
 - (instancetype)initWithName:(NSString *)name total:(NSNumber *)total {
     self = [super init];
     _name = name;
-    _total = total;
+    _total = @(total.doubleValue * 100);
     return self;
 }
 
