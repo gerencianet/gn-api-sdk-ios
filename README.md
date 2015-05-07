@@ -12,10 +12,11 @@ provided by [Gerencianet](http://gerencianet.com.br).
 
 Via [CocoaPods](http://cocoapods.org):
 ```ruby
-pod 'GNApi-Sdk-iOS', '~> 0.1'
+pod 'GNApi-Sdk-iOS', '~> 0.2'
 ```
 
 Direct download:
+
 Drag the `GNApiSdk/` folder to you project and install [AFNetworking](https://github.com/AFNetworking/AFNetworking)
 
 
@@ -66,10 +67,10 @@ GNMethod *method = [[GNMethod alloc] initWithName:kGNMethodNameMasterCard total:
 [gnApi fetchPaymentMethods:method];
 ```
 
-If you want to generate a boleto instead of paying with a credit card you just need to init the `GNMethod` object with the name `kGNMethodNameBoleto`
+If you want to generate a boleto instead of paying with a credit card you just need to init the `GNMethod` object with the name `kGNMethodNameBoleto`.
 
 This project already includes a sample application.
-To use it clone this repo, install dependencies with `pod install` and open with XCode.
+To use it just clone this repo, install dependencies with `pod install` and open with XCode.
 
 ## License
 
