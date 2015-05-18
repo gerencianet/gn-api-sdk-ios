@@ -19,7 +19,6 @@
         _total = [methodJSON valueForKey:@"total"];
         _rate = [methodJSON valueForKey:@"rate"];
         _currency = [methodJSON valueForKey:@"currency"];
-        _total = [methodJSON valueForKey:@"total"];
         _interestPercentage = [methodJSON valueForKey:@"interest_percentage"];
         
         NSMutableArray *installments = [[NSMutableArray alloc] init];
