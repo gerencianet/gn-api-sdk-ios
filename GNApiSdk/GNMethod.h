@@ -24,6 +24,6 @@ extern NSString *const kGNMethodNameDiscover;
 extern NSString *const kGNMethodNameJCB;
 extern NSString *const kGNMethodNameElo;
 extern NSString *const kGNMethodNameAura;
-extern NSString *const kGNMethodNameBoleto;
+extern NSString *const kGNMethodNameBankingBillet;
 
 @end

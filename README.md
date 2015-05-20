@@ -67,7 +67,7 @@ GNMethod *method = [[GNMethod alloc] initWithName:kGNMethodNameMasterCard total:
 [gnApi fetchPaymentMethods:method];
 ```
 
-If you want to generate a boleto instead of paying with a credit card you just need to init the `GNMethod` object with the name `kGNMethodNameBoleto`.
+If you want to generate a banking billet instead of paying with a credit card you just need to init the `GNMethod` object with the name `kGNMethodNameBankingBillet`.
 
 This project already includes a sample application.
 To use it just clone this repo, install dependencies with `pod install` and open with XCode.
