@@ -18,7 +18,7 @@ NSString *const kGNMethodTypeDiscover = @"discover";
 NSString *const kGNMethodTypeJCB = @"jcb";
 NSString *const kGNMethodTypeElo = @"elo";
 NSString *const kGNMethodTypeAura = @"aura";
-NSString *const kGNMethodTypeBankingBillet = @"billet";
+NSString *const kGNMethodTypeBankingBillet = @"banking_billet";
 
 - (instancetype)initWithType:(NSString *)type total:(NSNumber *)total {
     self = [super init];
