@@ -10,19 +10,19 @@
 
 @implementation GNMethod
 
-NSString *const kGNMethodNameVisa = @"visa";
-NSString *const kGNMethodNameMasterCard = @"mastercard";
-NSString *const kGNMethodNameAmex = @"amex";
-NSString *const kGNMethodNameDiners = @"diners";
-NSString *const kGNMethodNameDiscover = @"discover";
-NSString *const kGNMethodNameJCB = @"jcb";
-NSString *const kGNMethodNameElo = @"elo";
-NSString *const kGNMethodNameAura = @"aura";
-NSString *const kGNMethodNameBankingBillet = @"billet";
+NSString *const kGNMethodTypeVisa = @"visa";
+NSString *const kGNMethodTypeMasterCard = @"mastercard";
+NSString *const kGNMethodTypeAmex = @"amex";
+NSString *const kGNMethodTypeDiners = @"diners";
+NSString *const kGNMethodTypeDiscover = @"discover";
+NSString *const kGNMethodTypeJCB = @"jcb";
+NSString *const kGNMethodTypeElo = @"elo";
+NSString *const kGNMethodTypeAura = @"aura";
+NSString *const kGNMethodTypeBankingBillet = @"billet";
 
-- (instancetype)initWithName:(NSString *)name total:(NSNumber *)total {
+- (instancetype)initWithType:(NSString *)type total:(NSNumber *)total {
     self = [super init];
-    _name = name;
+    _type = type;
     _total = total;
     return self;
 }

@@ -12,10 +12,8 @@
 
 - (instancetype)initWithJSON:(NSJSONSerialization *)json {
     self = [super init];
-    if(self) {
-        _accessToken = [json valueForKey:@"access_token"];
-        _expiresAt = [NSDate dateWithTimeIntervalSinceNow:3600];
-    }
+    _accessToken = [json valueForKey:@"access_token"];
+    _expiresAt = [NSDate dateWithTimeIntervalSinceNow:3600];
     return self;
 }
 

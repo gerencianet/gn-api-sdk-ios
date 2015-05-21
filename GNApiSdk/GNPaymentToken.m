@@ -12,9 +12,7 @@
 
 - (instancetype)initWithJSON:(NSJSONSerialization *)json {
     self = [super init];
-    if(self){
-        _token = [[json valueForKey:@"card"] valueForKey:@"payment_token"];
-    }
+    _token = [[json valueForKey:@"card"] valueForKey:@"payment_token"];
     return self;
 }
 

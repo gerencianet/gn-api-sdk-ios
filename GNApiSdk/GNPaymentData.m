@@ -1,19 +1,19 @@
 //
-//  GNPaymentMethod.m
+//  GNPaymentData.m
 //  GNApiSdk
 //
 //  Created by Thomaz Feitoza on 5/4/15.
 //  Copyright (c) 2015 Gerencianet. All rights reserved.
 //
 
-#import "GNPaymentMethod.h"
+#import "GNPaymentData.h"
 #import "GNInstallment.h"
 
-@implementation GNPaymentMethod
+@implementation GNPaymentData
 
-- (instancetype)initWithMethod:(NSString *)methodName JSON:(NSJSONSerialization *)json {
+- (instancetype)initWithMethod:(GNMethod *)method JSON:(NSJSONSerialization *)json {
     self = [super init];
-    _methodName = methodName;
+    _methodType = method.type;
     NSJSONSerialization *methodJSON = [json valueForKey:@"method"];
     if(methodJSON){
         _total = [methodJSON valueForKey:@"total"];

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Gerencianet. All rights reserved.
 //
 
-#import "GNPaymentMethod.h"
+#import "GNPaymentData.h"
 
 @interface GNCreditCard : NSObject
 

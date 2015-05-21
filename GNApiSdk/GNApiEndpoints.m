@@ -10,26 +10,26 @@
 
 @implementation GNApiEndpoints
 
-NSString *const kGNApiRoutePaymentMethods = @"/payment/methods";
+NSString *const kGNApiRoutePaymentData = @"/payment/data";
 NSString *const kGNApiRouteSaveCard = @"/card";
 
-- (void)fetchPaymentMethods:(GNMethod *)method {
-    [self fetchPaymentMethods:method completion:^(GNPaymentMethod *paymentMethod, GNError *error) {
-        if(_delegate && [_delegate respondsToSelector:@selector(gnApiFetchPaymentMethodsFinished:error:)]){
-            [_delegate gnApiFetchPaymentMethodsFinished:paymentMethod error:error];
+- (void)fetchPaymentDataWithMethod:(GNMethod *)method {
+    [self fetchPaymentDataWithMethod:method completion:^(GNPaymentData *paymentData, GNError *error) {
+        if(_delegate && [_delegate respondsToSelector:@selector(gnApiFetchPaymentDataFinished:error:)]){
+            [_delegate gnApiFetchPaymentDataFinished:paymentData error:error];
         }
     }];
 }
 
-- (void)fetchPaymentMethods:(GNMethod *)method completion:(void (^)(GNPaymentMethod *paymentMethod, GNError *error))completion {
-    NSDictionary *params = [self encapsulateParams: @{@"data": method.name, @"total": method.total}];
-    [self post:kGNApiRoutePaymentMethods params:params callback:^(NSJSONSerialization *json, GNError *error) {
+- (void)fetchPaymentDataWithMethod:(GNMethod *)method completion:(void (^)(GNPaymentData *paymentData, GNError *error))completion {
+    NSDictionary *params = [self encapsulateParams: @{@"type": method.type, @"total": method.total}];
+    [self post:kGNApiRoutePaymentData params:params callback:^(NSJSONSerialization *json, GNError *error) {
         if(completion){
-            GNPaymentMethod *payMethod;
+            GNPaymentData *paymentData;
             if(!error){
-                payMethod = [[GNPaymentMethod alloc] initWithMethod:method.name JSON:json];
+                paymentData = [[GNPaymentData alloc] initWithMethod:method JSON:json];
             }
-            completion(payMethod, error);
+            completion(paymentData, error);
         }
     }];
 }

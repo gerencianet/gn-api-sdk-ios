@@ -10,20 +10,20 @@
 
 @interface GNMethod : NSObject
 
-@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *type;
 @property (strong, nonatomic) NSNumber *total;
 
-- (instancetype) initWithName:(NSString *)name total:(NSNumber *)number;
+- (instancetype) initWithType:(NSString *)type total:(NSNumber *)number;
 
 
-extern NSString *const kGNMethodNameVisa;
-extern NSString *const kGNMethodNameMasterCard;
-extern NSString *const kGNMethodNameAmex;
-extern NSString *const kGNMethodNameDiners;
-extern NSString *const kGNMethodNameDiscover;
-extern NSString *const kGNMethodNameJCB;
-extern NSString *const kGNMethodNameElo;
-extern NSString *const kGNMethodNameAura;
-extern NSString *const kGNMethodNameBankingBillet;
+extern NSString *const kGNMethodTypeVisa;
+extern NSString *const kGNMethodTypeMasterCard;
+extern NSString *const kGNMethodTypeAmex;
+extern NSString *const kGNMethodTypeDiners;
+extern NSString *const kGNMethodTypeDiscover;
+extern NSString *const kGNMethodTypeJCB;
+extern NSString *const kGNMethodTypeElo;
+extern NSString *const kGNMethodTypeAura;
+extern NSString *const kGNMethodTypeBankingBillet;
 
 @end

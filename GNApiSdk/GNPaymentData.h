@@ -1,5 +1,5 @@
 //
-//  GNPaymentMethod.h
+//  GNPaymentData.h
 //  GNApiSdk
 //
 //  Created by Thomaz Feitoza on 5/4/15.
@@ -7,16 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GNMethod.h"
 
-@interface GNPaymentMethod : NSObject
+@interface GNPaymentData : NSObject
 
-@property (strong, nonatomic, readonly) NSString *methodName;
+@property (strong, nonatomic, readonly) NSString *methodType;
 @property (strong, nonatomic, readonly) NSString *currency;
 @property (strong, nonatomic, readonly) NSNumber *total;
 @property (strong, nonatomic, readonly) NSNumber *rate;
 @property (strong, nonatomic, readonly) NSNumber *interestPercentage;
 @property (strong, nonatomic, readonly) NSArray *installments;
 
-- (instancetype)initWithMethod:(NSString *)methodName JSON:(NSJSONSerialization *)json;
+- (instancetype)initWithMethod:(GNMethod *)method JSON:(NSJSONSerialization *)json;
 
 @end
