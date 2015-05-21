@@ -32,11 +32,11 @@
     [super viewDidLoad];
     
     /*
-     * SET YOUR CREDENTIALS TO USE THE TEST APP
+     * SETUP YOUR CREDENTIALS TO USE THE TEST APP
      */
     GNConfig *gnConfig = [[GNConfig alloc] init];
-    gnConfig.clientId = @"YOUR-CLIENT-ID";
-    gnConfig.clientSecret = @"YOUR-CLIENT-SECRET";
+    gnConfig.clientId = @"YOUR_CLIENT_ID";
+    gnConfig.clientSecret = @"YOUR_CLIENT_SECRET";
     gnConfig.grantType = kGNConfigGrantTypeClientCredentials;
     gnConfig.sandbox = YES;
     

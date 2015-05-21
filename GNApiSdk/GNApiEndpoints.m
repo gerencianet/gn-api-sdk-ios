@@ -22,7 +22,7 @@ NSString *const kGNApiRouteSaveCard = @"/card";
 }
 
 - (void)fetchPaymentMethods:(GNMethod *)method completion:(void (^)(GNPaymentMethod *paymentMethod, GNError *error))completion {
-    NSDictionary *params = [self encapsulateParams: @{@"method": method.name, @"total": method.total}];
+    NSDictionary *params = [self encapsulateParams: @{@"data": method.name, @"total": method.total}];
     [self post:kGNApiRoutePaymentMethods params:params callback:^(NSJSONSerialization *json, GNError *error) {
         if(completion){
             GNPaymentMethod *payMethod;
