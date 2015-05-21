@@ -3,32 +3,35 @@
 A simple lib for easy integration of your mobile app with the payment services 
 provided by [Gerencianet](http://gerencianet.com.br).
 
-## Requirements
-
+### Requirements
 * iOS 7.0+
 * ARC
 
-## Installation
+### Dependencies
+* [AFNetworking](https://github.com/AFNetworking/AFNetworking)
 
-Via [CocoaPods](http://cocoapods.org):
+### Installation
+**Via [CocoaPods](http://cocoapods.org):**
+
 ```ruby
 pod 'GNApi-Sdk-iOS', '~> 0.2'
 ```
 
-Direct download:
+**Direct download:**
 
-Drag the `GNApiSdk/` folder to you project and install [AFNetworking](https://github.com/AFNetworking/AFNetworking)
+Drag the `GNApiSdk/` folder to you project and install dependencies.
 
+### Documentation
 
-## Documentation
+Import the sdk header file with ```#import "GNApiSdk.h"``` or ```#import <GNApi-Sdk-iOS/GNApiSdk.h>``` you are using CocoaPods.
 
 Instantiate a `GNConfig` object and set your credentials:
 
 ```objective-c
-GNConfig *gnConfig = [[GNConfig alloc] initWithClientId:@"YOUR-CLIENT-ID" clientSecret:@"YOUR-CLIENT-SECRET"];
+GNConfig *gnConfig = [[GNConfig alloc] initWithClientId:@"YOUR_CLIENT_ID" clientSecret:@"YOUR_CLIENT_SECRET"];
 ```
 
-If you're testing, set the sandbox flag to true:
+If you're testing, set the sandbox flag to ```YES```:
 
 ```objective-c
 gnConfig.sandbox = YES;
@@ -44,7 +47,7 @@ To receive a payment token you need to create a `GNCreditCard` object and call `
 ```objective-c
 GNCreditCard *creditCard = [[GNCreditCard alloc] init];
 creditCard.number = @"4012001038443335";
-creditCard.brand = kGNMethodNameVisa;
+creditCard.brand = kGNMethodTypeVisa;
 creditCard.expirationMonth = @"05";
 creditCard.expirationYear = @"2018";
 creditCard.cvv = @"123";
@@ -60,17 +63,29 @@ creditCard.cvv = @"123";
 > So you can use either blocks or delegates to receive callbacks.
 
 You can also get the installments before getting the payment token. 
-All you need is the total amount and the card brand:
+All you need is the total amount and the method type:
 
 ```objective-c
-GNMethod *method = [[GNMethod alloc] initWithName:kGNMethodNameMasterCard total:@(1000)];
-[gnApi fetchPaymentMethods:method];
+GNMethod *method = [[GNMethod alloc] initWithType:kGNMethodTypeMasterCard total:@(1000)];
+[_gnApi fetchPaymentDataWithMethod:method];
 ```
 
-If you want to generate a banking billet instead of paying with a credit card you just need to init the `GNMethod` object with the name `kGNMethodNameBankingBillet`.
+If you want to get the payment data for a banking billet instead of a credit card you just need to init the `GNMethod` object with the type `kGNMethodTypeBankingBillet`.
+
+The available method types are defined in the following constants:
+
+* ```kGNMethodTypeVisa```
+* ```kGNMethodTypeMasterCard```
+* ```kGNMethodTypeAmex```
+* ```kGNMethodTypeDiners```
+* ```kGNMethodTypeDiscover```
+* ```kGNMethodTypeJCB```
+* ```kGNMethodTypeElo```
+* ```kGNMethodTypeAura```
+* ```kGNMethodTypeBankingBillet```
 
 This project already includes a sample application.
-To use it just clone this repo, install dependencies with `pod install` and open with XCode.
+To use it just clone this repo, install dependencies with `pod install` and open with XCode. The example requires you to provide your API credentials.
 
 ## License
 
