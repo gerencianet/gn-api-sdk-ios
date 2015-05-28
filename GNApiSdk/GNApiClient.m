@@ -11,8 +11,8 @@
 
 @implementation GNApiClient
 
-NSString *const kGNApiBaseUrlProduction = @"https://api.gerencianet.com.br";
-NSString *const kGNApiBaseUrlSandbox = @"https://sandbox.gerencianet.com.br";
+NSString *const kGNApiBaseUrlProduction = @"https://api.gerencianet.com.br/v1";
+NSString *const kGNApiBaseUrlSandbox = @"https://sandbox.gerencianet.com.br/v1";
 
 - (instancetype)initWithConfig:(GNConfig *)config {
     self = [super init];

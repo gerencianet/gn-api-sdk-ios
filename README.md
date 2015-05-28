@@ -56,7 +56,7 @@ creditCard.cvv = @"123";
     if(!error){
         NSLog(@"%@", paymentToken.token);
     }
-}
+}];
 ```
 
 > `GNApiEndpoints` provides two signatures for each api method.
