@@ -18,6 +18,6 @@
 @property (strong, nonatomic, readonly) NSNumber *interestPercentage;
 @property (strong, nonatomic, readonly) NSArray *installments;
 
-- (instancetype)initWithMethod:(GNMethod *)method JSON:(NSJSONSerialization *)json;
+- (instancetype)initWithMethod:(GNMethod *)method dictionary:(NSDictionary *)dictionary;
 
 @end

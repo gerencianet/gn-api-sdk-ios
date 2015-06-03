@@ -10,9 +10,11 @@
 
 @implementation GNPaymentToken
 
-- (instancetype)initWithJSON:(NSJSONSerialization *)json {
+- (instancetype) initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
-    _token = [[json valueForKey:@"card"] valueForKey:@"payment_token"];
+    dictionary = [dictionary valueForKey:@"data"];
+    _token = [dictionary objectForKey:@"payment_token"];
+    _cardMask = [dictionary objectForKey:@"card_mask"];
     return self;
 }
 

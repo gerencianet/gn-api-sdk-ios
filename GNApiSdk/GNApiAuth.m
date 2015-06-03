@@ -47,7 +47,7 @@ NSString *const kGNApiRouteAuth = @"/authorize";
     return paramWithAuth;
 }
 
-- (NSDictionary *) dictionaryFromRequest:(NSString *)route params:(NSDictionary *)params callback:(void (^)(NSJSONSerialization *, GNError *))callback {
+- (NSDictionary *) dictionaryFromRequest:(NSString *)route params:(NSDictionary *)params callback:(void (^)(NSDictionary *, GNError *))callback {
     return @{
              @"route":route,
              @"params":params,
@@ -55,23 +55,30 @@ NSString *const kGNApiRouteAuth = @"/authorize";
              };
 }
 
-- (void) post:(NSString *)route params:(NSDictionary *)params callback:(void (^)(NSJSONSerialization *, GNError *))callback {
+- (void) post:(NSString *)route params:(NSDictionary *)params callback:(void (^)(NSDictionary *, GNError *))callback {
     if([self needsAuthorization]){
         NSDictionary *requestDictionary = [self dictionaryFromRequest:route params:params callback:callback];
         [_requestQueue addObject:requestDictionary];
         if(!_isAuthenticating){
             _isAuthenticating = YES;
-            [super post:kGNApiRouteAuth params:[self authRequestData] callback:^(NSJSONSerialization *json, GNError *error){
+            [super post:kGNApiRouteAuth params:[self authRequestData] callback:^(NSDictionary *response, GNError *error){
                 self.isAuthenticating = NO;
                 if(!error){
-                    _token = [[GNToken alloc] initWithJSON:json];
-                    for (NSDictionary *request in _requestQueue) {
-                        NSString *route = [request valueForKey:@"route"];
-                        NSDictionary *params = [request valueForKey:@"params"];
-                        id callback = [request valueForKey:@"callback"];
-                        [super post:route params:[self requestParamsWithToken:params] callback:callback];
+                    _token = [[GNToken alloc] initWithDictionary:response];
+                    if(_token.accessToken){
+                        for (NSDictionary *request in _requestQueue) {
+                            NSString *route = [request valueForKey:@"route"];
+                            NSDictionary *params = [request valueForKey:@"params"];
+                            id callback = [request valueForKey:@"callback"];
+                            [super post:route params:[self requestParamsWithToken:params] callback:callback];
+                        }
+                        [_requestQueue removeAllObjects];
                     }
-                    [_requestQueue removeAllObjects];
+                    else {
+                        if(callback){
+                            callback(nil, [[GNError alloc] initWithCode:@(500) message:@"Could not get the access token."]);
+                        }
+                    }
                 }
                 else {
                     if(callback){

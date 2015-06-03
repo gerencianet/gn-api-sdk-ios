@@ -20,37 +20,39 @@ NSString *const kGNApiBaseUrlSandbox = @"https://sandbox.gerencianet.com.br/v1";
     return self;
 }
 
-- (void)post:(NSString *)route params:(NSDictionary *)params callback:(void (^)(NSJSONSerialization *, GNError *))callback {
+- (void)post:(NSString *)route params:(NSDictionary *)params callback:(void (^)(NSDictionary *, GNError *))callback {
     NSString *url = [NSString stringWithFormat:@"%@%@", (_config.sandbox ? kGNApiBaseUrlSandbox : kGNApiBaseUrlProduction), route];
     AFHTTPRequestOperationManager *httpManager = [AFHTTPRequestOperationManager manager];
     
     [httpManager POST:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if(callback){
             NSError *err = nil;
-            NSJSONSerialization *json = [NSJSONSerialization JSONObjectWithData:operation.responseData options:NSJSONReadingMutableContainers error:&err];
+            NSDictionary *responseDict = [NSJSONSerialization JSONObjectWithData:operation.responseData options:NSJSONReadingMutableContainers error:&err];
             GNError *gnApiErr = nil;
             if(err){
                 gnApiErr = [[GNError alloc] initWithCode:@(500) message:@"Invalid response data."];
+                responseDict = nil;
             }
-            else if([json valueForKey:@"error"]){
-                gnApiErr = [[GNError alloc] initWithJSON:json];
-                json = nil;
+            else if([responseDict objectForKey:@"error"]){
+                gnApiErr = [[GNError alloc] initWithDictionary:responseDict];
+                responseDict = nil;
             }
-            callback(json, gnApiErr);
+            callback(responseDict, gnApiErr);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if(callback){
             NSError *err;
-            NSJSONSerialization *jsonErr;
+            NSDictionary *responseDict;
             GNError *gnApiErr;
             if(operation.responseData){
-                jsonErr = [NSJSONSerialization JSONObjectWithData:operation.responseData options:NSJSONReadingMutableContainers error:&err];
+                responseDict = [NSJSONSerialization JSONObjectWithData:operation.responseData options:NSJSONReadingMutableContainers error:&err];
             }
-            if(!err && jsonErr){
-                gnApiErr = [[GNError alloc] initWithJSON:jsonErr];
+            if(!err && responseDict){
+                gnApiErr = [[GNError alloc] initWithDictionary:responseDict];
             } else {
                 gnApiErr = [[GNError alloc] initWithCode:@(500) message:@"Invalid response data."];
             }
+            
             callback(nil, gnApiErr);
         }
     }];

@@ -13,7 +13,7 @@
 @property (strong, nonatomic, readonly) NSNumber *code;
 @property (strong, nonatomic, readonly) NSString *message;
 
-- (instancetype) initWithJSON:(NSJSONSerialization *)json;
+- (instancetype) initWithDictionary:(NSDictionary *)dictionary;
 - (instancetype) initWithCode:(NSNumber *)code message:(NSString *)message;
 
 @end

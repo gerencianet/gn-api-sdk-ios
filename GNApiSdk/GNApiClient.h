@@ -16,6 +16,6 @@
 @property (strong, nonatomic) GNConfig *config;
 
 - (instancetype) initWithConfig:(GNConfig *)config;
-- (void) post:(NSString *)route params:(NSDictionary *)params callback:(void (^)(NSJSONSerialization *json, GNError *error))callback;
+- (void) post:(NSString *)route params:(NSDictionary *)params callback:(void (^)(NSDictionary *response, GNError *error))callback;
 
 @end

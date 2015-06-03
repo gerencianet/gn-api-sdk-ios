@@ -10,10 +10,10 @@
 
 @implementation GNError
 
-- (instancetype)initWithJSON:(NSJSONSerialization *)json {
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
-    _code = [json valueForKey:@"code"];
-    _message = [json valueForKey:@"error_description"];
+    _code = [dictionary objectForKey:@"code"];
+    _message = [self stringFromErrorObject: [dictionary objectForKey:@"error_description"]];
     return self;
 }
 
@@ -22,6 +22,21 @@
     _code = code;
     _message = message;
     return self;
+}
+
+- (NSString *) stringFromErrorObject:(id)object {
+    NSString *err = @"";
+    if([object isKindOfClass:[NSString class]]){
+        return object;
+    }
+    else if([object isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *dictionary = object;
+        for (NSString *key in dictionary) {
+            id value = [object objectForKey:key];
+            err = [err stringByAppendingFormat:@"%@: %@. ", key, [self stringFromErrorObject:value]];
+        }
+    }
+    return err;
 }
 
 @end

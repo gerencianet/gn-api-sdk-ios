@@ -13,7 +13,7 @@
 @property (strong, nonatomic, readonly) NSString *accessToken;
 @property (strong, nonatomic, readonly) NSDate *expiresAt;
 
-- (instancetype) initWithJSON:(NSJSONSerialization *)json;
+- (instancetype) initWithDictionary:(NSDictionary *)dictionary;
 - (BOOL) hasExpired;
 
 @end

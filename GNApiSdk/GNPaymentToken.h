@@ -11,7 +11,8 @@
 @interface GNPaymentToken : NSObject
 
 @property (strong, nonatomic, readonly) NSString *token;
+@property (strong, nonatomic, readonly) NSString *cardMask;
 
-- (instancetype) initWithJSON:(NSJSONSerialization *)json;
+- (instancetype) initWithDictionary:(NSDictionary *)dictionary;
 
 @end

@@ -15,6 +15,6 @@
 @property (strong, nonatomic, readonly) NSNumber *hasInterest;
 @property (strong, nonatomic, readonly) NSString *currency;
 
-- (instancetype) initWithJSON:(NSJSONSerialization *)json;
+- (instancetype) initWithDictionary:(NSDictionary *)dictionary;
 
 @end

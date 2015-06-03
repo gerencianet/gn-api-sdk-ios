@@ -23,11 +23,11 @@ NSString *const kGNApiRouteSaveCard = @"/card";
 
 - (void)fetchPaymentDataWithMethod:(GNMethod *)method completion:(void (^)(GNPaymentData *paymentData, GNError *error))completion {
     NSDictionary *params = [self encapsulateParams: @{@"type": method.type, @"total": method.total}];
-    [self post:kGNApiRoutePaymentData params:params callback:^(NSJSONSerialization *json, GNError *error) {
+    [self post:kGNApiRoutePaymentData params:params callback:^(NSDictionary *response, GNError *error) {
         if(completion){
             GNPaymentData *paymentData;
             if(!error){
-                paymentData = [[GNPaymentData alloc] initWithMethod:method JSON:json];
+                paymentData = [[GNPaymentData alloc] initWithMethod:method dictionary:response];
             }
             completion(paymentData, error);
         }
@@ -50,11 +50,11 @@ NSString *const kGNApiRouteSaveCard = @"/card";
                                                       @"expiration_month": creditCard.expirationMonth,
                                                       @"expiration_year": creditCard.expirationYear
                                                     }];
-    [self post:kGNApiRouteSaveCard params:params callback:^(NSJSONSerialization *json, GNError *error) {
+    [self post:kGNApiRouteSaveCard params:params callback:^(NSDictionary *response, GNError *error) {
         if(completion){
             GNPaymentToken *paymentToken;
             if(!error){
-                paymentToken = [[GNPaymentToken alloc] initWithJSON:json];
+                paymentToken = [[GNPaymentToken alloc] initWithDictionary:response];
             }
             completion(paymentToken, error);
         }

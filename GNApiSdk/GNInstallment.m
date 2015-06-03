@@ -10,12 +10,12 @@
 
 @implementation GNInstallment
 
-- (instancetype)initWithJSON:(NSJSONSerialization *)json {
+- (instancetype) initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
-    _parcels = [json valueForKey:@"installment"];
-    _value = [json valueForKey:@"value"];
-    _hasInterest = [json valueForKey:@"has_interest"];
-    _currency = [json valueForKey:@"currency"];
+    _parcels = [dictionary objectForKey:@"installment"];
+    _value = [dictionary objectForKey:@"value"];
+    _hasInterest = [dictionary objectForKey:@"has_interest"];
+    _currency = [dictionary objectForKey:@"currency"];
     return self;
 }
 

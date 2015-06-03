@@ -10,10 +10,13 @@
 
 @implementation GNToken
 
-- (instancetype)initWithJSON:(NSJSONSerialization *)json {
+- (instancetype) initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
-    _accessToken = [json valueForKey:@"access_token"];
-    _expiresAt = [NSDate dateWithTimeIntervalSinceNow:3600];
+    _accessToken = [dictionary objectForKey:@"access_token"];
+    
+    NSNumber *expiresSeconds = [dictionary objectForKey:@"expires_in"];
+    _expiresAt = [NSDate dateWithTimeIntervalSinceNow:expiresSeconds.intValue];
+    
     return self;
 }
 

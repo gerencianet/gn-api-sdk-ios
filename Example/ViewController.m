@@ -119,7 +119,7 @@
 - (void)gnApiPaymentTokenForCreditCardFinished:(GNPaymentToken *)paymentToken error:(GNError *)error {
     [self setLoading:NO];
     if(!error){
-        _serverResponseLabel.text = [NSString stringWithFormat:@"Route: /card\nYour payment token is %@", paymentToken.token];
+        _serverResponseLabel.text = [NSString stringWithFormat:@"Route: /card\nYour payment token for the card %@ is %@", paymentToken.cardMask, paymentToken.token];
     }
     else {
         _serverResponseLabel.text = [NSString stringWithFormat:@"Route: /card\nError: %d - %@", error.code.intValue, error.message];

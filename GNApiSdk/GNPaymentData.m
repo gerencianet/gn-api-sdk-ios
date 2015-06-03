@@ -11,24 +11,23 @@
 
 @implementation GNPaymentData
 
-- (instancetype)initWithMethod:(GNMethod *)method JSON:(NSJSONSerialization *)json {
+- (instancetype) initWithMethod:(GNMethod *)method dictionary:(NSDictionary *)dictionary {
     self = [super init];
+    dictionary = [dictionary valueForKey:@"data"];
+    
     _methodType = method.type;
-    NSJSONSerialization *methodJSON = [json valueForKey:@"method"];
-    if(methodJSON){
-        _total = [methodJSON valueForKey:@"total"];
-        _rate = [methodJSON valueForKey:@"rate"];
-        _currency = [methodJSON valueForKey:@"currency"];
-        _interestPercentage = [methodJSON valueForKey:@"interest_percentage"];
-        
-        NSMutableArray *installments = [[NSMutableArray alloc] init];
-        NSArray *installmentsData = [methodJSON valueForKey:@"installments"];
-        for (NSJSONSerialization *installmentJSON in installmentsData) {
-            GNInstallment *installment = [[GNInstallment alloc] initWithJSON:installmentJSON];
-            [installments addObject:installment];
-        }
-        _installments = installments;
+    _total = [dictionary objectForKey:@"total"];
+    _rate = [dictionary objectForKey:@"rate"];
+    _currency = [dictionary objectForKey:@"currency"];
+    _interestPercentage = [dictionary objectForKey:@"interest_percentage"];
+    
+    NSMutableArray *installments = [[NSMutableArray alloc] init];
+    NSArray *installmentsData = [dictionary objectForKey:@"installments"];
+    for (NSDictionary *instDict in installmentsData) {
+        GNInstallment *installment = [[GNInstallment alloc] initWithDictionary:instDict];
+        [installments addObject:installment];
     }
+    _installments = installments;
     return self;
 }
 
