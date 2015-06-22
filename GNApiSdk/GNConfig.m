@@ -10,14 +10,10 @@
 
 @implementation GNConfig
 
-NSString *const kGNConfigGrantTypeClientCredentials = @"client_credentials";
-
-- (instancetype)initWithClientId:(NSString *)clientId clientSecret:(NSString *)clientSecret {
+- (instancetype) initWithAccountCode:(NSString *)accountCode sandbox:(BOOL)sandbox {
     self = [super init];
-    _grantType = kGNConfigGrantTypeClientCredentials;
-    _clientId = clientId;
-    _clientSecret = clientSecret;
-    _sandbox = NO;
+    _accountCode = accountCode;
+    _sandbox = sandbox;
     return self;
 }
 

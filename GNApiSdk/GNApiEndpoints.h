@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Gerencianet. All rights reserved.
 //
 
-#import "GNApiAuth.h"
+#import "GNApiClient.h"
 #import "GNMethod.h"
 #import "GNPaymentData.h"
 #import "GNError.h"
@@ -23,7 +23,7 @@
 @end
 
 
-@interface GNApiEndpoints : GNApiAuth
+@interface GNApiEndpoints : GNApiClient
 
 @property (weak, nonatomic) id<GNApiEndpointsDelegate> delegate;
 

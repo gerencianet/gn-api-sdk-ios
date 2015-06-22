@@ -10,7 +10,6 @@
 #import "GNApiEndpoints.h"
 #import "GNConfig.h"
 #import "GNPaymentData.h"
-#import "GNToken.h"
 #import "GNInstallment.h"
 #import "GNPaymentToken.h"
 #import "GNMethod.h"

@@ -10,15 +10,9 @@
 
 @interface GNConfig : NSObject
 
-@property (strong, nonatomic) NSString *clientId;
-@property (strong, nonatomic) NSString *clientSecret;
-@property (strong, nonatomic) NSString *grantType;
+@property (strong, nonatomic) NSString *accountCode;
 @property (nonatomic) BOOL sandbox;
 
-
-- (instancetype) initWithClientId:(NSString *)clientId clientSecret:(NSString *)clientSecret;
-
-
-extern NSString *const kGNConfigGrantTypeClientCredentials;
+- (instancetype) initWithAccountCode:(NSString *)accountCode sandbox:(BOOL)sandbox;
 
 @end

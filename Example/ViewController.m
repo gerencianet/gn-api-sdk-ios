@@ -36,15 +36,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    /*
-     * SETUP YOUR CREDENTIALS TO USE THE TEST APP
-     */
-    GNConfig *gnConfig = [[GNConfig alloc] init];
-    gnConfig.clientId = @"YOUR_CLIENT_ID";
-    gnConfig.clientSecret = @"YOUR_CLIENT_SECRET";
-    gnConfig.grantType = kGNConfigGrantTypeClientCredentials;
-    gnConfig.sandbox = YES;
-    
+    GNConfig *gnConfig = [[GNConfig alloc] initWithAccountCode:@"YOUR_ACCOUNT_CODE" sandbox:YES];
     _gnApi = [[GNApiEndpoints alloc] initWithConfig:gnConfig];
     _gnApi.delegate = self;
 }
@@ -54,18 +46,8 @@
 
 - (IBAction)onGetPaymentDataButtonPressed {
     if([self validateGetPaymentData]){
-        NSString *methodType;
-        switch (_methodTypeControl.selectedSegmentIndex) {
-            default:
-                methodType = kGNMethodTypeVisa;
-                break;
-            case 1:
-                methodType = kGNMethodTypeMasterCard;
-                break;
-            case 2:
-                methodType = kGNMethodTypeBankingBillet;
-                break;
-        }
+        NSArray *methods = @[kGNMethodTypeVisa, kGNMethodTypeMasterCard, kGNMethodTypeBankingBillet];
+        NSString *methodType = methods[_methodTypeControl.selectedSegmentIndex];
         
         NSString *totalValueString = _totalValueTextField.text;
         NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];

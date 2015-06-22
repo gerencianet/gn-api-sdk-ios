@@ -3,7 +3,7 @@
 
 target 'GNApiSdk' do
 
-pod "AFNetworking", "~> 2.0"
+pod "AFNetworking", "~> 2.5"
 
 end
 

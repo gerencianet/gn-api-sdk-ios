@@ -23,18 +23,12 @@ Drag the `GNApiSdk/` folder to you project and install dependencies.
 
 ### Documentation
 
-Import the sdk header file with ```#import "GNApiSdk.h"``` or ```#import <GNApi-Sdk-iOS/GNApiSdk.h>``` you are using CocoaPods.
+Import the sdk header file with ```#import "GNApiSdk.h"``` or ```#import <GNApi-Sdk-iOS/GNApiSdk.h>``` if you are using CocoaPods.
 
-Instantiate a `GNConfig` object and set your credentials:
-
-```objective-c
-GNConfig *gnConfig = [[GNConfig alloc] initWithClientId:@"YOUR_CLIENT_ID" clientSecret:@"YOUR_CLIENT_SECRET"];
-```
-
-If you're testing, set the sandbox flag to ```YES```:
+Instantiate a `GNConfig` object defining your account code. If you're in development phase, set the sandbox flag to ```YES```:
 
 ```objective-c
-gnConfig.sandbox = YES;
+GNConfig *gnConfig = [[GNConfig alloc] initWithAccountCode:@"YOUR_ACCOUNT_CODE" sandbox:YES];
 ```
 
 Create an `GNApiEndpoints` instance passing your `GNConfig`:
@@ -66,6 +60,7 @@ You can also get the installments before getting the payment token.
 All you need is the total amount and the method type:
 
 ```objective-c
+// The following code will fetch installments for a total of R$10,00 with MasterCard card brand.
 GNMethod *method = [[GNMethod alloc] initWithType:kGNMethodTypeMasterCard total:@(1000)];
 [_gnApi fetchPaymentDataWithMethod:method];
 ```
@@ -85,30 +80,8 @@ The available method types are defined in the following constants:
 * ```kGNMethodTypeBankingBillet```
 
 This project already includes a sample application.
-To use it just clone this repo, install dependencies with `pod install` and open with XCode. The example requires you to provide your API credentials.
+To use it just clone this repo, install dependencies with `pod install` and open with XCode. The example requires you to provide your account code.
 
 ## License
 
-[The MIT License (MIT)](http://opensource.org/licenses/MIT)
-
-    The MIT License (MIT)
-
-    Copyright (c) 2015 Gerencianet
-
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be included in
-    all copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-    THE SOFTWARE.
+[MIT](https://github.com/gerencianet/gn-api-sdk-ios/blob/master/LICENSE)
