@@ -1,5 +1,6 @@
 language: objective-c
 before_install:
+- chmod +x coveralls.sh
 - sudo easy_install cpp-coveralls
 - pod install
 script:
