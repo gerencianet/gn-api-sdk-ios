@@ -1,10 +1,8 @@
 language: objective-c
 before_install:
 - sudo easy_install cpp-coveralls
-- brew uninstall xctool
-- brew update
-- brew install xctool --HEAD
 - pod install
+- xctool build
 script:
 - xctool test ONLY_ACTIVE_ARCH=NO GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
 after_success:

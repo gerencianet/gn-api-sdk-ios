@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C070AAC7B281E1E287B82BB1"
+               BlueprintIdentifier = "308BE153168D371F98029A2F"
                BuildableName = "libPods-Tests.a"
                BlueprintName = "Pods-Tests"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C3639ACFC63A2F67732A1560"
+               BlueprintIdentifier = "6A713EFA088EF65043D8746B"
                BuildableName = "libPods-Tests-OCMock.a"
                BlueprintName = "Pods-Tests-OCMock"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -42,7 +42,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "13950CFD495A3535E1727852"
+               BlueprintIdentifier = "1C5AC51D90B670A266BB2FBF"
                BuildableName = "libPods-Tests-AFNetworking.a"
                BlueprintName = "Pods-Tests-AFNetworking"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -56,7 +56,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "61668C06FB370F32C5E6611F"
+               BlueprintIdentifier = "3ABAC68D219735173BBD079E"
                BuildableName = "libPods-GNApiSdk-AFNetworking.a"
                BlueprintName = "Pods-GNApiSdk-AFNetworking"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -70,7 +70,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9FFAEF643255F66E733298C6"
+               BlueprintIdentifier = "C9E4362C429D726234C8BB4E"
                BuildableName = "libPods-GNApiSdk.a"
                BlueprintName = "Pods-GNApiSdk"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
