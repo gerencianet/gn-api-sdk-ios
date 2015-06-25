@@ -3,6 +3,7 @@ platform :ios, '7.0'
 
 target 'GNApiSdk' do
     pod "AFNetworking", "~> 2.5"
+    pod "RegexKitLite"
 end
 
 target 'Tests' do

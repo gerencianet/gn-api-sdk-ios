@@ -14,7 +14,21 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5DF501FDD9662B38AF46731D"
+               BlueprintIdentifier = "E8BB97A19384CBC5642E9FDD"
+               BuildableName = "libPods-GNApiSdk-RegexKitLite.a"
+               BlueprintName = "Pods-GNApiSdk-RegexKitLite"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "96F5ADFF1B118E29F0CC26A4"
                BuildableName = "libPods-GNApiSdk-AFNetworking.a"
                BlueprintName = "Pods-GNApiSdk-AFNetworking"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -28,9 +42,51 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AD2C66B96B1C00866311547A"
+               BlueprintIdentifier = "B00CD58A4C903A0EB603B542"
+               BuildableName = "libPods-Tests-AFNetworking.a"
+               BlueprintName = "Pods-Tests-AFNetworking"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "293769A930A61B37CA4D27AC"
+               BuildableName = "libPods-Tests-OCMock.a"
+               BlueprintName = "Pods-Tests-OCMock"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "558CB15552D17B925EF97B2F"
                BuildableName = "libPods-GNApiSdk.a"
                BlueprintName = "Pods-GNApiSdk"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DCE1C37BE29306B0D5EE49D3"
+               BuildableName = "libPods-Tests.a"
+               BlueprintName = "Pods-Tests"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

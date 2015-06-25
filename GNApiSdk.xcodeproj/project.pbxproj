@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2A9D2CC45518E2CD452D1DDD /* libPods-GNApiSdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C59FE9B22783C1CA1F8A137 /* libPods-GNApiSdk.a */; };
 		8D952F32FC0C123011830D80 /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FF839B7D3FE6731B6DB08C /* libPods-Tests.a */; };
-		FF1D2D511AFBABFF00BBD16D /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1D2D501AFBABFF00BBD16D /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FF1D2D531AFBAE5400BBD16D /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FF1D2D521AFBAE5400BBD16D /* libicucore.dylib */; };
 		FF62F4C61AF8DAB00060DF03 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF62F4BC1AF8DAB00060DF03 /* AppDelegate.m */; };
 		FF62F4C71AF8DAB00060DF03 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF62F4BD1AF8DAB00060DF03 /* LaunchScreen.xib */; };
@@ -54,8 +53,6 @@
 		96FF839B7D3FE6731B6DB08C /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D46718E3172DB1E23588F59 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D131B6D8DB6BC5392AB75770 /* Pods-GNApiSdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GNApiSdk.release.xcconfig"; path = "Pods/Target Support Files/Pods-GNApiSdk/Pods-GNApiSdk.release.xcconfig"; sourceTree = "<group>"; };
-		FF1D2D4F1AFBABFF00BBD16D /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
-		FF1D2D501AFBABFF00BBD16D /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		FF1D2D521AFBAE5400BBD16D /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		FF62F47E1AF8DA540060DF03 /* GNApiSdk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GNApiSdk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF62F4BB1AF8DAB00060DF03 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -141,23 +138,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		FF1D2D4D1AFBABFF00BBD16D /* Libs */ = {
-			isa = PBXGroup;
-			children = (
-				FF1D2D4E1AFBABFF00BBD16D /* RegexKitLite */,
-			);
-			path = Libs;
-			sourceTree = "<group>";
-		};
-		FF1D2D4E1AFBABFF00BBD16D /* RegexKitLite */ = {
-			isa = PBXGroup;
-			children = (
-				FF1D2D4F1AFBABFF00BBD16D /* RegexKitLite.h */,
-				FF1D2D501AFBABFF00BBD16D /* RegexKitLite.m */,
-			);
-			path = RegexKitLite;
-			sourceTree = "<group>";
-		};
 		FF62F4751AF8DA540060DF03 = {
 			isa = PBXGroup;
 			children = (
@@ -192,7 +172,6 @@
 				FF62F4C31AF8DAB00060DF03 /* main.m */,
 				FF62F4C41AF8DAB00060DF03 /* ViewController.h */,
 				FF62F4C51AF8DAB00060DF03 /* ViewController.m */,
-				FF1D2D4D1AFBABFF00BBD16D /* Libs */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -445,7 +424,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF62F4CC1AF8DAB00060DF03 /* ViewController.m in Sources */,
-				FF1D2D511AFBABFF00BBD16D /* RegexKitLite.m in Sources */,
 				FFA4B6071AF8FB4400C50DAB /* GNApiClient.m in Sources */,
 				FFA4B5EB1AF8EC6000C50DAB /* GNMethod.m in Sources */,
 				FFA4B5FE1AF8F53600C50DAB /* GNConfig.m in Sources */,
