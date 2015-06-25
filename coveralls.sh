@@ -48,8 +48,7 @@ main()
 generateGcov
 copyGcovToProjectDir
 # post
-echo ${@+"$@"}
-coveralls ${@+"$@"} -e Pods
+coveralls ${@+"$@"} --exclude Pods --exclude Tests --exclude Example --exclude-pattern ".*\.h"
 # clean up
 removeGcov
 }
