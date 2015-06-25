@@ -1,0 +1,7 @@
+[
+"-workspace", "GNApiSdk.xcworkspace",
+"-scheme", "GNApiSdk",
+"-configuration", "Debug",
+"-sdk", "iphonesimulator",
+"-arch", "i386"
+]

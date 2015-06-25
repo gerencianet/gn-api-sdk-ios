@@ -29,6 +29,8 @@
 		FFA4B5FE1AF8F53600C50DAB /* GNConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA4B5FD1AF8F53600C50DAB /* GNConfig.m */; };
 		FFA4B6071AF8FB4400C50DAB /* GNApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA4B6061AF8FB4400C50DAB /* GNApiClient.m */; };
 		FFA4B60D1AF9137E00C50DAB /* GNApiEndpoints.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA4B60C1AF9137E00C50DAB /* GNApiEndpoints.m */; };
+		FFB7FFE71B3C1B2F0057957C /* .xctool-args in Resources */ = {isa = PBXBuildFile; fileRef = FFB7FFE61B3C1B2F0057957C /* .xctool-args */; };
+		FFB7FFE91B3C1C560057957C /* coveralls.sh in Resources */ = {isa = PBXBuildFile; fileRef = FFB7FFE81B3C1C560057957C /* coveralls.sh */; };
 		FFED92E91B388D44007B5CC5 /* GNApi-Sdk-iOS.podspec in Resources */ = {isa = PBXBuildFile; fileRef = FFED92E51B388D44007B5CC5 /* GNApi-Sdk-iOS.podspec */; };
 		FFED92EA1B388D44007B5CC5 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FFED92E61B388D44007B5CC5 /* LICENSE */; };
 		FFED92EB1B388D44007B5CC5 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FFED92E71B388D44007B5CC5 /* Podfile */; };
@@ -89,9 +91,11 @@
 		FFA4B6061AF8FB4400C50DAB /* GNApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNApiClient.m; sourceTree = "<group>"; };
 		FFA4B60B1AF9137E00C50DAB /* GNApiEndpoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNApiEndpoints.h; sourceTree = "<group>"; };
 		FFA4B60C1AF9137E00C50DAB /* GNApiEndpoints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNApiEndpoints.m; sourceTree = "<group>"; };
+		FFB7FFE61B3C1B2F0057957C /* .xctool-args */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ".xctool-args"; sourceTree = "<group>"; };
+		FFB7FFE81B3C1C560057957C /* coveralls.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = coveralls.sh; sourceTree = "<group>"; };
 		FFED92E51B388D44007B5CC5 /* GNApi-Sdk-iOS.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GNApi-Sdk-iOS.podspec"; sourceTree = "<group>"; };
 		FFED92E61B388D44007B5CC5 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		FFED92E71B388D44007B5CC5 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		FFED92E71B388D44007B5CC5 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		FFED92E81B388D44007B5CC5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -261,6 +265,8 @@
 				FFED92E71B388D44007B5CC5 /* Podfile */,
 				FFED92E81B388D44007B5CC5 /* README.md */,
 				FF7A6F6D1B3B2C7E009743D9 /* .travis.yml */,
+				FFB7FFE61B3C1B2F0057957C /* .xctool-args */,
+				FFB7FFE81B3C1C560057957C /* coveralls.sh */,
 			);
 			name = Metadata;
 			sourceTree = "<group>";
@@ -349,7 +355,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFB7FFE91B3C1C560057957C /* coveralls.sh in Resources */,
 				FFED92EA1B388D44007B5CC5 /* LICENSE in Resources */,
+				FFB7FFE71B3C1B2F0057957C /* .xctool-args in Resources */,
 				FF62F4C91AF8DAB00060DF03 /* Images.xcassets in Resources */,
 				FF62F4C71AF8DAB00060DF03 /* LaunchScreen.xib in Resources */,
 				FF62F4C81AF8DAB00060DF03 /* Main.storyboard in Resources */,
