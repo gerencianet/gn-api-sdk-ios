@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E8BB97A19384CBC5642E9FDD"
+               BlueprintIdentifier = "7B1D022EADBED9304EDB6A38"
                BuildableName = "libPods-GNApiSdk-RegexKitLite.a"
                BlueprintName = "Pods-GNApiSdk-RegexKitLite"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "96F5ADFF1B118E29F0CC26A4"
+               BlueprintIdentifier = "227EB8F7B94F92557B87A468"
                BuildableName = "libPods-GNApiSdk-AFNetworking.a"
                BlueprintName = "Pods-GNApiSdk-AFNetworking"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -42,7 +42,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "558CB15552D17B925EF97B2F"
+               BlueprintIdentifier = "EF879B071D4A4DE2C5D878E3"
                BuildableName = "libPods-GNApiSdk.a"
                BlueprintName = "Pods-GNApiSdk"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -56,7 +56,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DCE1C37BE29306B0D5EE49D3"
+               BlueprintIdentifier = "EE5928396025B7938AB56A8F"
                BuildableName = "libPods-Tests.a"
                BlueprintName = "Pods-Tests"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">

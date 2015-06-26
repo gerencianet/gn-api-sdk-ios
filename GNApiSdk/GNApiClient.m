@@ -34,6 +34,9 @@ NSString *const kGNApiBaseUrlSandbox = @"https://sandbox.gerencianet.com.br/v1";
     NSString *url = [NSString stringWithFormat:@"%@%@", (_config.sandbox ? kGNApiBaseUrlSandbox : kGNApiBaseUrlProduction), route];
     AFHTTPRequestOperationManager *httpManager = [AFHTTPRequestOperationManager manager];
     
+    if(!params){
+        params = [[NSDictionary alloc] init];
+    }
     params = [self attachAccountCode:params];
     [httpManager POST:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if(callback){

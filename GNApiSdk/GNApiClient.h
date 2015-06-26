@@ -18,4 +18,7 @@
 - (instancetype) initWithConfig:(GNConfig *)config;
 - (void) post:(NSString *)route params:(NSDictionary *)params callback:(void (^)(NSDictionary *response, GNError *error))callback;
 
+extern NSString *const kGNApiBaseUrlProduction;
+extern NSString *const kGNApiBaseUrlSandbox;
+
 @end

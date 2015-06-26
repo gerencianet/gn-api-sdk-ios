@@ -3,6 +3,9 @@
 A simple lib for easy integration of your mobile app with the payment services 
 provided by [Gerencianet](http://gerencianet.com.br).
 
+[![Build Status](https://travis-ci.org/gerencianet/gn-api-sdk-ios.svg?branch=tests)](https://travis-ci.org/gerencianet/gn-api-sdk-ios)
+[![Coverage Status](https://coveralls.io/repos/gerencianet/gn-api-sdk-ios/badge.svg?branch=tests)](https://coveralls.io/r/gerencianet/gn-api-sdk-ios?branch=tests)
+
 ### Requirements
 * iOS 7.0+
 * ARC
