@@ -68,8 +68,7 @@
     GNApiClient *gnApiClient = [[GNApiClient alloc] initWithConfig:_config];
     
     _wsStub.andReturn(200)
-    .withHeaders(@{@"Content-Type": @"application/json"})
-    .withBody(@"invalidJsonResponse");
+    .withHeaders(@{@"Content-Type": @"application/json"});
     
     [gnApiClient post:_stubRoute params:@{} callback:^(NSDictionary *response, GNError *error) {
         [httpExpect fulfill];
