@@ -1,0 +1,18 @@
+//
+//  PrefixHeader.pch
+//  GNApiSdk
+//
+//  Created by Thomaz Feitoza on 6/26/15.
+//  Copyright (c) 2015 Gerencianet. All rights reserved.
+//
+
+#ifndef GNApiSdk_PrefixHeader_pch
+#define GNApiSdk_PrefixHeader_pch
+
+#import <OCMock/OCMock.h>
+#import "GNApiSdk.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif

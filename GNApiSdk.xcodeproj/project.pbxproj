@@ -20,6 +20,7 @@
 		FF7A6F641B3B27B7009743D9 /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A6F631B3B27B7009743D9 /* Tests.m */; };
 		FF7A6F6C1B3B289A009743D9 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A6F6B1B3B289A009743D9 /* Card.m */; };
 		FF7A6F6E1B3B2C7E009743D9 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = FF7A6F6D1B3B2C7E009743D9 /* .travis.yml */; };
+		FF914ADE1B3C7FCA00D1745F /* ApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FF914ADD1B3C7FCA00D1745F /* ApiClient.m */; };
 		FFA4B5E51AF8E95200C50DAB /* GNInstallment.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA4B5E41AF8E95200C50DAB /* GNInstallment.m */; };
 		FFA4B5E81AF8EB6000C50DAB /* GNPaymentToken.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA4B5E71AF8EB6000C50DAB /* GNPaymentToken.m */; };
 		FFA4B5EB1AF8EC6000C50DAB /* GNMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA4B5EA1AF8EC6000C50DAB /* GNMethod.m */; };
@@ -28,12 +29,17 @@
 		FFA4B5FE1AF8F53600C50DAB /* GNConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA4B5FD1AF8F53600C50DAB /* GNConfig.m */; };
 		FFA4B6071AF8FB4400C50DAB /* GNApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA4B6061AF8FB4400C50DAB /* GNApiClient.m */; };
 		FFA4B60D1AF9137E00C50DAB /* GNApiEndpoints.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA4B60C1AF9137E00C50DAB /* GNApiEndpoints.m */; };
+		FFADC30A1B3D6CCF00F17C47 /* GNMethodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFADC3091B3D6CCF00F17C47 /* GNMethodTests.m */; };
+		FFADC30C1B3D6FC000F17C47 /* GNErrorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFADC30B1B3D6FC000F17C47 /* GNErrorTests.m */; };
+		FFADC30E1B3D7B0400F17C47 /* GNCreditCardTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFADC30D1B3D7B0400F17C47 /* GNCreditCardTest.m */; };
+		FFADC3101B3D7D6B00F17C47 /* GNInstallmentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFADC30F1B3D7D6B00F17C47 /* GNInstallmentTests.m */; };
+		FFADC3121B3D7FB500F17C47 /* GNPaymentTokenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFADC3111B3D7FB500F17C47 /* GNPaymentTokenTests.m */; };
+		FFADC3141B3D81BC00F17C47 /* GNPaymentDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFADC3131B3D81BC00F17C47 /* GNPaymentDataTests.m */; };
 		FFB7FFE71B3C1B2F0057957C /* .xctool-args in Resources */ = {isa = PBXBuildFile; fileRef = FFB7FFE61B3C1B2F0057957C /* .xctool-args */; };
 		FFB7FFE91B3C1C560057957C /* coveralls.sh in Resources */ = {isa = PBXBuildFile; fileRef = FFB7FFE81B3C1C560057957C /* coveralls.sh */; };
 		FFED92E91B388D44007B5CC5 /* GNApi-Sdk-iOS.podspec in Resources */ = {isa = PBXBuildFile; fileRef = FFED92E51B388D44007B5CC5 /* GNApi-Sdk-iOS.podspec */; };
 		FFED92EA1B388D44007B5CC5 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FFED92E61B388D44007B5CC5 /* LICENSE */; };
 		FFED92EB1B388D44007B5CC5 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FFED92E71B388D44007B5CC5 /* Podfile */; };
-		FFED92EC1B388D44007B5CC5 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = FFED92E81B388D44007B5CC5 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +78,7 @@
 		FF7A6F631B3B27B7009743D9 /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		FF7A6F6B1B3B289A009743D9 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 		FF7A6F6D1B3B2C7E009743D9 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		FF914ADD1B3C7FCA00D1745F /* ApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiClient.m; sourceTree = "<group>"; };
 		FFA4B5E31AF8E95200C50DAB /* GNInstallment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNInstallment.h; sourceTree = "<group>"; };
 		FFA4B5E41AF8E95200C50DAB /* GNInstallment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNInstallment.m; sourceTree = "<group>"; };
 		FFA4B5E61AF8EB6000C50DAB /* GNPaymentToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNPaymentToken.h; sourceTree = "<group>"; };
@@ -88,6 +95,13 @@
 		FFA4B6061AF8FB4400C50DAB /* GNApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNApiClient.m; sourceTree = "<group>"; };
 		FFA4B60B1AF9137E00C50DAB /* GNApiEndpoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNApiEndpoints.h; sourceTree = "<group>"; };
 		FFA4B60C1AF9137E00C50DAB /* GNApiEndpoints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNApiEndpoints.m; sourceTree = "<group>"; };
+		FFADC3081B3D6BFF00F17C47 /* Tests.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tests.pch; sourceTree = "<group>"; };
+		FFADC3091B3D6CCF00F17C47 /* GNMethodTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNMethodTests.m; sourceTree = "<group>"; };
+		FFADC30B1B3D6FC000F17C47 /* GNErrorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNErrorTests.m; sourceTree = "<group>"; };
+		FFADC30D1B3D7B0400F17C47 /* GNCreditCardTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNCreditCardTest.m; sourceTree = "<group>"; };
+		FFADC30F1B3D7D6B00F17C47 /* GNInstallmentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNInstallmentTests.m; sourceTree = "<group>"; };
+		FFADC3111B3D7FB500F17C47 /* GNPaymentTokenTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNPaymentTokenTests.m; sourceTree = "<group>"; };
+		FFADC3131B3D81BC00F17C47 /* GNPaymentDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNPaymentDataTests.m; sourceTree = "<group>"; };
 		FFB7FFE61B3C1B2F0057957C /* .xctool-args */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ".xctool-args"; sourceTree = "<group>"; };
 		FFB7FFE81B3C1C560057957C /* coveralls.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = coveralls.sh; sourceTree = "<group>"; };
 		FFED92E51B388D44007B5CC5 /* GNApi-Sdk-iOS.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GNApi-Sdk-iOS.podspec"; sourceTree = "<group>"; };
@@ -180,8 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				FF62F4D11AF8DBCF0060DF03 /* GNApiSdk.h */,
-				FFA4B5FB1AF8F52000C50DAB /* endpoints */,
-				FFA4B5DF1AF8DF8700C50DAB /* models */,
+				FFA4B5FB1AF8F52000C50DAB /* Endpoints */,
+				FFA4B5DF1AF8DF8700C50DAB /* Models */,
 			);
 			path = GNApiSdk;
 			sourceTree = "<group>";
@@ -189,9 +203,11 @@
 		FF7A6F601B3B27B7009743D9 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				FFADC3051B3D6A7B00F17C47 /* Models */,
 				FF7A6F631B3B27B7009743D9 /* Tests.m */,
 				FF7A6F6B1B3B289A009743D9 /* Card.m */,
 				FF7A6F611B3B27B7009743D9 /* Supporting Files */,
+				FF914ADD1B3C7FCA00D1745F /* ApiClient.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -200,11 +216,12 @@
 			isa = PBXGroup;
 			children = (
 				FF7A6F621B3B27B7009743D9 /* Info.plist */,
+				FFADC3081B3D6BFF00F17C47 /* Tests.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		FFA4B5DF1AF8DF8700C50DAB /* models */ = {
+		FFA4B5DF1AF8DF8700C50DAB /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				FF727A5E1B0E0D6300FAE890 /* GNPaymentData.h */,
@@ -220,10 +237,10 @@
 				FFA4B5F81AF8F33F00C50DAB /* GNCreditCard.h */,
 				FFA4B5F91AF8F33F00C50DAB /* GNCreditCard.m */,
 			);
-			name = models;
+			name = Models;
 			sourceTree = "<group>";
 		};
-		FFA4B5FB1AF8F52000C50DAB /* endpoints */ = {
+		FFA4B5FB1AF8F52000C50DAB /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
 				FFA4B5FC1AF8F53600C50DAB /* GNConfig.h */,
@@ -233,7 +250,20 @@
 				FFA4B6051AF8FB4400C50DAB /* GNApiClient.h */,
 				FFA4B6061AF8FB4400C50DAB /* GNApiClient.m */,
 			);
-			name = endpoints;
+			name = Endpoints;
+			sourceTree = "<group>";
+		};
+		FFADC3051B3D6A7B00F17C47 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FFADC3091B3D6CCF00F17C47 /* GNMethodTests.m */,
+				FFADC30B1B3D6FC000F17C47 /* GNErrorTests.m */,
+				FFADC30D1B3D7B0400F17C47 /* GNCreditCardTest.m */,
+				FFADC30F1B3D7D6B00F17C47 /* GNInstallmentTests.m */,
+				FFADC3111B3D7FB500F17C47 /* GNPaymentTokenTests.m */,
+				FFADC3131B3D81BC00F17C47 /* GNPaymentDataTests.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		FFED92E41B388D27007B5CC5 /* Metadata */ = {
@@ -432,7 +462,6 @@
 				FFA4B5E51AF8E95200C50DAB /* GNInstallment.m in Sources */,
 				FFA4B5FA1AF8F33F00C50DAB /* GNCreditCard.m in Sources */,
 				FF62F4C61AF8DAB00060DF03 /* AppDelegate.m in Sources */,
-				FFED92EC1B388D44007B5CC5 /* README.md in Sources */,
 				FFA4B5E81AF8EB6000C50DAB /* GNPaymentToken.m in Sources */,
 				FFA4B60D1AF9137E00C50DAB /* GNApiEndpoints.m in Sources */,
 				FFA4B5EE1AF8ED8000C50DAB /* GNError.m in Sources */,
@@ -443,8 +472,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFADC3141B3D81BC00F17C47 /* GNPaymentDataTests.m in Sources */,
+				FFADC30C1B3D6FC000F17C47 /* GNErrorTests.m in Sources */,
+				FF914ADE1B3C7FCA00D1745F /* ApiClient.m in Sources */,
+				FFADC3101B3D7D6B00F17C47 /* GNInstallmentTests.m in Sources */,
 				FF7A6F641B3B27B7009743D9 /* Tests.m in Sources */,
+				FFADC30E1B3D7B0400F17C47 /* GNCreditCardTest.m in Sources */,
 				FF7A6F6C1B3B289A009743D9 /* Card.m in Sources */,
+				FFADC30A1B3D6CCF00F17C47 /* GNMethodTests.m in Sources */,
+				FFADC3121B3D7FB500F17C47 /* GNPaymentTokenTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +630,7 @@
 				);
 				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = Tests/Tests.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -618,6 +655,7 @@
 				);
 				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = Tests/Tests.pch;
 				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

@@ -3,7 +3,8 @@ before_install:
 - chmod +x coveralls.sh
 - sudo easy_install cpp-coveralls
 - pod install
+- xctool clean build
 script:
-- xctool clean build test -freshSimulator -freshInstall ONLY_ACTIVE_ARCH=NO GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES
+- xctool test -freshSimulator -freshInstall ONLY_ACTIVE_ARCH=NO GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES
 after_success:
 - ./coveralls.sh
