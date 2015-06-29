@@ -51,6 +51,9 @@
 }
 
 - (void)testFetchPaymentData {
+    GNApiEndpoints *gnApi = [[GNApiEndpoints alloc] initWithConfig:_config];
+    XCTAssertNotNil(gnApi, @"gnApi should not be nil");
+    
     _paymentDataStub.andReturn(200)
         .withHeaders(@{@"Content-Type": @"application/json"})
         .withBody(_paymentDataResponseMock);
