@@ -11,18 +11,43 @@
 
 @interface GNCreditCardTest : XCTestCase
 
+@property (strong, nonatomic) GNCreditCard *creditCard;
+
 @end
 
 @implementation GNCreditCardTest
 
+- (void)setUp {
+    _creditCard = [[GNCreditCard alloc] initWithNumber:@"1000200030004000" brand:kGNMethodBrandDiners expirationMonth:@"12" expirationYear:@"2018" cvv:@"123"];
+}
+
+- (void)tearDown {
+    _creditCard = nil;
+}
+
 - (void)testInitialization {
-    GNCreditCard *creditCard = [[GNCreditCard alloc] initWithNumber:@"1000200030004000" brand:kGNMethodTypeDiners expirationMonth:@"12" expirationYear:@"2018" cvv:@"123"];
-    XCTAssertNotNil(creditCard, @"GNCreditCard instance should not be nil");
-    XCTAssertEqualObjects(creditCard.number, @"1000200030004000", @"creditCard number should be equal to 1000200030004000");
-    XCTAssertEqualObjects(creditCard.brand, kGNMethodTypeDiners, @"creditCard brand should be equal to diners");
-    XCTAssertEqualObjects(creditCard.expirationMonth, @"12", @"creditCard expirationMonth should be equal to 12");
-    XCTAssertEqualObjects(creditCard.expirationYear, @"2018", @"creditCard expirationYear should be equal to 2018");
-    XCTAssertEqualObjects(creditCard.cvv, @"123", @"creditCard cvv should be equal to 123");
+    _creditCard = [[GNCreditCard alloc] initWithNumber:@"1000200030004000" brand:kGNMethodBrandDiners expirationMonth:@"12" expirationYear:@"2018" cvv:@"123"];
+    XCTAssertNotNil(_creditCard, @"GNCreditCard instance should not be nil");
+    XCTAssertEqualObjects(_creditCard.number, @"1000200030004000", @"creditCard number should be equal to 1000200030004000");
+    XCTAssertEqualObjects(_creditCard.brand, kGNMethodBrandDiners, @"creditCard brand should be equal to diners");
+    XCTAssertEqualObjects(_creditCard.expirationMonth, @"12", @"creditCard expirationMonth should be equal to 12");
+    XCTAssertEqualObjects(_creditCard.expirationYear, @"2018", @"creditCard expirationYear should be equal to 2018");
+    XCTAssertEqualObjects(_creditCard.cvv, @"123", @"creditCard cvv should be equal to 123");
+}
+
+- (void) testParamsDictionary {
+    NSDictionary *params = [_creditCard paramsDicionary];
+    NSDictionary *keyMap = @{@"number": @"number",
+                             @"brand": @"brand",
+                             @"cvv": @"cvv",
+                             @"expiration_month": @"expirationMonth",
+                             @"expiration_year": @"expirationYear"};
+    for (NSString *paramKey in keyMap) {
+        id methodValue = [_creditCard valueForKey:[keyMap valueForKey:paramKey]];
+        id paramValue = [params valueForKey:paramKey];
+        XCTAssertEqual(paramValue, methodValue, @"params values should be equal the properties in GNCreditCard instance");
+    }
+    
 }
 
 @end

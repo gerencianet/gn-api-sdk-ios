@@ -20,4 +20,12 @@
     return self;
 }
 
+- (NSDictionary *)paramsDicionary {
+    return @{@"number": self.number,
+             @"brand": self.brand,
+             @"cvv": self.cvv,
+             @"expiration_month": self.expirationMonth,
+             @"expiration_year": self.expirationYear };
+}
+
 @end

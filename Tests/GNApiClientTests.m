@@ -25,7 +25,7 @@
     [super setUp];
     [[LSNocilla sharedInstance] start];
     _config = [[GNConfig alloc] initWithAccountCode:@"my_account_code" sandbox:YES];
-    _stubRoute = @"/payment/data";
+    _stubRoute = @"/installments";
     _wsStub = stubRequest(@"POST", [NSString stringWithFormat:@"%@%@", kGNApiBaseUrlSandbox, _stubRoute]);
 }
 
@@ -42,7 +42,7 @@
 
 - (void)testInvalidAccountCode {
     GNApiClient *gnApiClient = [[GNApiClient alloc] initWithConfig:nil];
-    XCTAssertThrowsSpecificNamed([gnApiClient post:@"/postRoute" params:nil callback:nil], NSException, @"Account code not defined");
+    XCTAssertThrowsSpecificNamed([gnApiClient request:@"/postRoute" method:@"POST" params:nil callback:nil], NSException, @"Account code not defined");
 }
 
 - (void) testSuccessfulResponse {
@@ -53,7 +53,7 @@
         .withHeaders(@{@"Content-Type": @"application/json"})
         .withBody(@"{\"method\":\"visa\", \"total\":1200}");
     
-    [gnApiClient post:_stubRoute params:@{} callback:^(NSDictionary *response, GNError *error) {
+    [gnApiClient request:_stubRoute method:@"POST" params:@{} callback:^(NSDictionary *response, GNError *error) {
         [httpExpect fulfill];
         XCTAssertNil(error, @"error should be nil");
         XCTAssertEqualObjects([response valueForKey:@"method"], @"visa", @"response should have a method attribute with value 'visa'");
@@ -70,7 +70,7 @@
     _wsStub.andReturn(200)
     .withHeaders(@{@"Content-Type": @"application/json"});
     
-    [gnApiClient post:_stubRoute params:@{} callback:^(NSDictionary *response, GNError *error) {
+    [gnApiClient request:_stubRoute method:@"POST" params:@{} callback:^(NSDictionary *response, GNError *error) {
         [httpExpect fulfill];
         XCTAssertEqualObjects(error.code, @(500), @"error code should be equal to 500");
         XCTAssertEqualObjects(error.message, @"Invalid response data.", @"error message should be equal to 'Invalid response data.'");
@@ -87,7 +87,7 @@
     .withHeaders(@{@"Content-Type": @"application/json"})
     .withBody(@"{\"error\":\"api error\", \"error_description\":\"invalid request params\", \"code\": 90034}");
     
-    [gnApiClient post:_stubRoute params:@{} callback:^(NSDictionary *response, GNError *error) {
+    [gnApiClient request:_stubRoute method:@"POST" params:@{} callback:^(NSDictionary *response, GNError *error) {
         [httpExpect fulfill];
         XCTAssertEqualObjects(error.code, @(90034), @"error code should be equal to 90034");
         XCTAssertEqualObjects(error.message, @"invalid request params", @"error message should be equal to 'invalid request params'");
@@ -103,7 +103,7 @@
     _wsStub.andReturn(404)
     .withHeaders(@{@"Content-Type": @"application/json"});
     
-    [gnApiClient post:_stubRoute params:@{} callback:^(NSDictionary *response, GNError *error) {
+    [gnApiClient request:_stubRoute method:@"POST" params:@{} callback:^(NSDictionary *response, GNError *error) {
         [httpExpect fulfill];
         XCTAssertEqualObjects(error.code, @(500), @"error code should be equal to 500");
         XCTAssertEqualObjects(error.message, @"Invalid response data.", @"error message should be equal to 'Invalid response data.'");
@@ -120,7 +120,7 @@
     .withHeaders(@{@"Content-Type": @"application/json"})
     .withBody(@"{\"error\":\"server_error\", \"error_description\":\"Internal server error\", \"code\":500}");
     
-    [gnApiClient post:_stubRoute params:nil callback:^(NSDictionary *response, GNError *error) {
+    [gnApiClient request:_stubRoute method:@"POST" params:nil callback:^(NSDictionary *response, GNError *error) {
         [httpExpect fulfill];
         XCTAssertEqualObjects(error.code, @(500), @"error code should be equal to 500");
         XCTAssertEqualObjects(error.message, @"Internal server error", @"error message should be equal to 'Internal server error'");

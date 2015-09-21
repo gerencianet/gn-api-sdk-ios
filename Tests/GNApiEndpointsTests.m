@@ -36,11 +36,11 @@
     _gnApi.delegate = self;
     _apiExpectation = [self expectationWithDescription:@"GNApi request"];
     
-    _method = [[GNMethod alloc] initWithType:kGNMethodTypeVisa total:@(4500)];
-    _paymentDataStub = stubRequest(@"POST", [NSString stringWithFormat:@"%@%@", kGNApiBaseUrlSandbox, @"/payment/data"]);
+    _method = [[GNMethod alloc] initWithBrand:kGNMethodBrandVisa total:@(4500)];
+    _paymentDataStub = stubRequest(@"GET", [NSString stringWithFormat:@"%@%@", kGNApiBaseUrlSandbox, @"/installments?brand=visa&total=4500"]);
     _paymentDataResponseMock = @"{\"code\":200,\"data\":{\"rate\":0,\"name\":\"visa\",\"installments\":[{\"installment\":1,\"has_interest\":false,\"value\":4500,\"currency\":\"45,00\",\"interest_percentage\":199},{\"installment\":2,\"has_interest\":true,\"value\":2341,\"currency\":\"23,41\",\"interest_percentage\":199},{\"installment\":3,\"has_interest\":true,\"value\":1591,\"currency\":\"15,91\",\"interest_percentage\":199},{\"installment\":4,\"has_interest\":true,\"value\":1217,\"currency\":\"12,17\",\"interest_percentage\":199},{\"installment\":5,\"has_interest\":true,\"value\":993,\"currency\":\"9,93\",\"interest_percentage\":199},{\"installment\":6,\"has_interest\":true,\"value\":844,\"currency\":\"8,44\",\"interest_percentage\":199},{\"installment\":7,\"has_interest\":true,\"value\":738,\"currency\":\"7,38\",\"interest_percentage\":199},{\"installment\":8,\"has_interest\":true,\"value\":659,\"currency\":\"6,59\",\"interest_percentage\":199},{\"installment\":9,\"has_interest\":true,\"value\":597,\"currency\":\"5,97\",\"interest_percentage\":199},{\"installment\":10,\"has_interest\":true,\"value\":548,\"currency\":\"5,48\",\"interest_percentage\":199},{\"installment\":11,\"has_interest\":true,\"value\":508,\"currency\":\"5,08\",\"interest_percentage\":199}]}}";
     
-    _creditCard = [[GNCreditCard alloc] initWithNumber:@"1000200030004000" brand:kGNMethodTypeVisa expirationMonth:@"09" expirationYear:@"2018" cvv:@"123"];
+    _creditCard = [[GNCreditCard alloc] initWithNumber:@"1000200030004000" brand:kGNMethodBrandVisa expirationMonth:@"09" expirationYear:@"2018" cvv:@"123"];
     _cardStub = stubRequest(@"POST", [NSString stringWithFormat:@"%@%@", kGNApiBaseUrlSandbox, @"/card"]);
     _cardResponseMock = @"{\"code\":200,\"data\":{\"payment_token\":\"98aedf334b07165f15ec7a80fdd157d32d86a8fa\",\"card_mask\": \"XXXXXXXXXXXX4000\"}}";
 }

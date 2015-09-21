@@ -13,7 +13,7 @@
 
 @interface ViewController () <GNApiEndpointsDelegate>
 
-@property (weak, nonatomic) IBOutlet UISegmentedControl *methodTypeControl;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *methodBrandControl;
 @property (weak, nonatomic) IBOutlet UITextField *totalValueTextField;
 @property (weak, nonatomic) IBOutlet UIButton *getPaymentDataButton;
 
@@ -46,8 +46,8 @@
 
 - (IBAction)onGetPaymentDataButtonPressed {
     if([self validateGetPaymentData]){
-        NSArray *methods = @[kGNMethodTypeVisa, kGNMethodTypeMasterCard, kGNMethodTypeBankingBillet];
-        NSString *methodType = methods[_methodTypeControl.selectedSegmentIndex];
+        NSArray *methods = @[kGNMethodBrandVisa, kGNMethodBrandMasterCard, kGNMethodBrandBankingBillet];
+        NSString *methodBrand = methods[_methodBrandControl.selectedSegmentIndex];
         
         NSString *totalValueString = _totalValueTextField.text;
         NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
@@ -55,9 +55,10 @@
         NSNumber *totalValue = [formatter numberFromString:totalValueString];
         totalValue = @(totalValue.doubleValue * 100);
         
-        GNMethod *gnMethod = [[GNMethod alloc] initWithType:methodType total:totalValue];
+        GNMethod *gnMethod = [[GNMethod alloc] initWithBrand:methodBrand total:totalValue];
         [_gnApi fetchPaymentDataWithMethod:gnMethod];
         [self setLoading:YES];
+        [self.view endEditing:YES];
     }
 }
 
@@ -65,13 +66,14 @@
     if([self validatePay]){
         GNCreditCard *creditCard = [[GNCreditCard alloc] init];
         creditCard.number = _cardNumberTextField.text;
-        creditCard.brand = _cardBrandControl.selectedSegmentIndex==0 ? kGNMethodTypeVisa : kGNMethodTypeMasterCard;
+        creditCard.brand = _cardBrandControl.selectedSegmentIndex==0 ? kGNMethodBrandVisa : kGNMethodBrandMasterCard;
         creditCard.expirationMonth = _monthTextField.text;
         creditCard.expirationYear = _yearTextField.text;
         creditCard.cvv = _cvvTextField.text;
         
         [_gnApi paymentTokenForCreditCard:creditCard];
         [self setLoading:YES];
+        [self.view endEditing:YES];
     }
 }
 
@@ -81,7 +83,7 @@
 - (void)gnApiFetchPaymentDataFinished:(GNPaymentData *)paymentData error:(GNError *)error {
     [self setLoading:NO];
     if(!error){
-        NSString *response = [NSString stringWithFormat:@"Method Type: %@\n", paymentData.methodType];
+        NSString *response = [NSString stringWithFormat:@"Method Brand: %@\n", paymentData.methodBrand];
         if(paymentData.installments.count==0){
             response = [NSString stringWithFormat:@"%@Total: R$%.2f\nRate: R$%.2f", response, paymentData.total.doubleValue/100, paymentData.rate.doubleValue/100];
         }
@@ -92,9 +94,9 @@
             }
         }
         
-        _serverResponseLabel.text = [NSString stringWithFormat:@"Route: /payment/data\n%@", response];
+        _serverResponseLabel.text = [NSString stringWithFormat:@"Route: /installments\n%@", response];
     } else {
-        _serverResponseLabel.text = [NSString stringWithFormat:@"Route: /payment/data\nError: %d - %@", error.code.intValue, error.message];
+        _serverResponseLabel.text = [NSString stringWithFormat:@"Route: /installments\nError: %d - %@", error.code.intValue, error.message];
     }
 }
 

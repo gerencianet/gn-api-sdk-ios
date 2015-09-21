@@ -283,7 +283,7 @@
                         <outlet property="cvvTextField" destination="iNp-jl-e06" id="D6A-vc-iNX"/>
                         <outlet property="getPaymentDataButton" destination="X6J-jq-zjB" id="Swx-av-rYT"/>
                         <outlet property="getPaymentTokenButton" destination="SGh-FM-Spy" id="d2N-Gk-bB3"/>
-                        <outlet property="methodTypeControl" destination="IY4-4X-DLz" id="L31-Yo-VfU"/>
+                        <outlet property="methodBrandControl" destination="IY4-4X-DLz" id="lt7-VF-5ZW"/>
                         <outlet property="monthTextField" destination="YqL-Qa-uJa" id="jdz-on-OsE"/>
                         <outlet property="serverResponseLabel" destination="FPx-Jv-qR8" id="mWo-Ch-IoP"/>
                         <outlet property="totalValueTextField" destination="kGb-RG-z7P" id="NIn-Kh-3sK"/>

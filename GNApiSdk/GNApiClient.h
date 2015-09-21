@@ -16,7 +16,7 @@
 @property (strong, nonatomic) GNConfig *config;
 
 - (instancetype) initWithConfig:(GNConfig *)config;
-- (void) post:(NSString *)route params:(NSDictionary *)params callback:(void (^)(NSDictionary *response, GNError *error))callback;
+- (void) request:(NSString *)route method:(NSString *)method params:(NSDictionary *)params callback:(void (^)(NSDictionary *, GNError *))callback;
 
 extern NSString *const kGNApiBaseUrlProduction;
 extern NSString *const kGNApiBaseUrlSandbox;

@@ -47,7 +47,7 @@ To receive a payment token you need to create a `GNCreditCard` object and call `
 ```objective-c
 GNCreditCard *creditCard = [[GNCreditCard alloc] init];
 creditCard.number = @"4012001038443335";
-creditCard.brand = kGNMethodTypeVisa;
+creditCard.brand = kGNMethodBrandVisa;
 creditCard.expirationMonth = @"05";
 creditCard.expirationYear = @"2018";
 creditCard.cvv = @"123";
@@ -61,29 +61,30 @@ creditCard.cvv = @"123";
 
 > `GNApiEndpoints` provides two signatures for each api method.
 > So you can use either blocks or delegates to receive callbacks.
+> An example of how to use the `GNApiEndpointsDelegate` protocol can be found in the `Example/` directory.
 
 You can also get the installments before getting the payment token. 
-All you need is the total amount and the method type:
+All you need is the total amount and the method brand:
 
 ```objective-c
 // The following code will fetch installments for a total of R$10,00 with MasterCard card brand.
-GNMethod *method = [[GNMethod alloc] initWithType:kGNMethodTypeMasterCard total:@(1000)];
+GNMethod *method = [[GNMethod alloc] initWithBrand:kGNMethodBrandMasterCard total:@(1000)];
 [_gnApi fetchPaymentDataWithMethod:method];
 ```
 
-If you want to get the payment data for a banking billet instead of a credit card you just need to init the `GNMethod` object with the type `kGNMethodTypeBankingBillet`.
+If you want to get the payment data for a banking billet instead of a credit card you just need to init the `GNMethod` object with the brand `kGNMethodBrandBankingBillet`.
 
-The available method types are defined in the following constants:
+The available method brands are defined in the following constants:
 
-* ```kGNMethodTypeVisa```
-* ```kGNMethodTypeMasterCard```
-* ```kGNMethodTypeAmex```
-* ```kGNMethodTypeDiners```
-* ```kGNMethodTypeDiscover```
-* ```kGNMethodTypeJCB```
-* ```kGNMethodTypeElo```
-* ```kGNMethodTypeAura```
-* ```kGNMethodTypeBankingBillet```
+* ```kGNMethodBrandVisa```
+* ```kGNMethodBrandMasterCard```
+* ```kGNMethodBrandAmex```
+* ```kGNMethodBrandDiners```
+* ```kGNMethodBrandDiscover```
+* ```kGNMethodBrandJCB```
+* ```kGNMethodBrandElo```
+* ```kGNMethodBrandAura```
+* ```kGNMethodBrandBankingBillet```
 
 This project already includes a sample application.
 To use it just clone this repo, install dependencies with `pod install` and open with XCode. The example requires you to provide your account code.

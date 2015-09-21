@@ -20,25 +20,17 @@ NSString *const kGNApiBaseUrlSandbox = @"https://sandbox.gerencianet.com.br/v1";
     return self;
 }
 
-- (NSDictionary *) attachAccountCode:(NSDictionary *)requestParams {
-    NSMutableDictionary *attachedParams = [requestParams mutableCopy];
-    [attachedParams addEntriesFromDictionary:@{@"account_code": _config.accountCode}];
-    return attachedParams;
-}
-
-- (void)post:(NSString *)route params:(NSDictionary *)params callback:(void (^)(NSDictionary *, GNError *))callback {
+- (void) request:(NSString *)route method:(NSString *)method params:(NSDictionary *)params callback:(void (^)(NSDictionary *, GNError *))callback {
     if(!_config.accountCode){
         [NSException raise:@"Account code not defined" format:@"Please setup your GN account code before making requests"];
     }
     
     NSString *url = [NSString stringWithFormat:@"%@%@", (_config.sandbox ? kGNApiBaseUrlSandbox : kGNApiBaseUrlProduction), route];
     AFHTTPRequestOperationManager *httpManager = [AFHTTPRequestOperationManager manager];
+    [httpManager.requestSerializer setValue:_config.accountCode forHTTPHeaderField:@"account-code"];
+    httpManager.securityPolicy.allowInvalidCertificates = YES;
     
-    if(!params){
-        params = [[NSDictionary alloc] init];
-    }
-    params = [self attachAccountCode:params];
-    [httpManager POST:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    id successBlock = ^(AFHTTPRequestOperation *operation, id responseObject) {
         if(callback){
             NSError *err = nil;
             NSDictionary *responseDict = [NSJSONSerialization JSONObjectWithData:operation.responseData options:NSJSONReadingMutableContainers error:&err];
@@ -53,7 +45,9 @@ NSString *const kGNApiBaseUrlSandbox = @"https://sandbox.gerencianet.com.br/v1";
             }
             callback(responseDict, gnApiErr);
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    };
+    
+    id errorBlock = ^(AFHTTPRequestOperation *operation, NSError *error) {
         if(callback){
             NSError *err;
             NSDictionary *responseDict;
@@ -69,7 +63,13 @@ NSString *const kGNApiBaseUrlSandbox = @"https://sandbox.gerencianet.com.br/v1";
             
             callback(nil, gnApiErr);
         }
-    }];
+    };
+    
+    if ([method isEqualToString:@"POST"]) {
+        [httpManager POST:url parameters:params success:successBlock failure:errorBlock];
+    } else if ([method isEqualToString:@"GET"]) {
+        [httpManager GET:url parameters:params success:successBlock failure:errorBlock];
+    }
 }
 
 @end

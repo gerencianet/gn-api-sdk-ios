@@ -18,4 +18,6 @@
 
 - (instancetype) initWithNumber:(NSString *)number brand:(NSString *)brand expirationMonth:(NSString *)expirationMonth expirationYear:(NSString *)expirationYear cvv:(NSString *)cvv;
 
+- (NSDictionary *) paramsDicionary;
+
 @end

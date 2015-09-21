@@ -11,7 +11,7 @@
 
 @interface GNPaymentData : NSObject
 
-@property (strong, nonatomic, readonly) NSString *methodType;
+@property (strong, nonatomic, readonly) NSString *methodBrand;
 @property (strong, nonatomic, readonly) NSString *currency;
 @property (strong, nonatomic, readonly) NSNumber *total;
 @property (strong, nonatomic, readonly) NSNumber *rate;

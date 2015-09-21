@@ -15,7 +15,7 @@
     self = [super init];
     dictionary = [dictionary valueForKey:@"data"];
     
-    _methodType = method.type;
+    _methodBrand = method.brand;
     _total = [dictionary objectForKey:@"total"];
     _rate = [dictionary objectForKey:@"rate"];
     _currency = [dictionary objectForKey:@"currency"];

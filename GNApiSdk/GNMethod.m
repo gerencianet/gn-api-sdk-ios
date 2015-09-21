@@ -10,21 +10,25 @@
 
 @implementation GNMethod
 
-NSString *const kGNMethodTypeVisa = @"visa";
-NSString *const kGNMethodTypeMasterCard = @"mastercard";
-NSString *const kGNMethodTypeAmex = @"amex";
-NSString *const kGNMethodTypeDiners = @"diners";
-NSString *const kGNMethodTypeDiscover = @"discover";
-NSString *const kGNMethodTypeJCB = @"jcb";
-NSString *const kGNMethodTypeElo = @"elo";
-NSString *const kGNMethodTypeAura = @"aura";
-NSString *const kGNMethodTypeBankingBillet = @"banking_billet";
+NSString *const kGNMethodBrandVisa = @"visa";
+NSString *const kGNMethodBrandMasterCard = @"mastercard";
+NSString *const kGNMethodBrandAmex = @"amex";
+NSString *const kGNMethodBrandDiners = @"diners";
+NSString *const kGNMethodBrandDiscover = @"discover";
+NSString *const kGNMethodBrandJCB = @"jcb";
+NSString *const kGNMethodBrandElo = @"elo";
+NSString *const kGNMethodBrandAura = @"aura";
+NSString *const kGNMethodBrandBankingBillet = @"banking_billet";
 
-- (instancetype)initWithType:(NSString *)type total:(NSNumber *)total {
+- (instancetype)initWithBrand:(NSString *)brand total:(NSNumber *)total {
     self = [super init];
-    _type = type;
+    _brand = brand;
     _total = total;
     return self;
+}
+
+- (NSDictionary *)paramsDicionary {
+    return [self dictionaryWithValuesForKeys:@[@"brand", @"total"]];
 }
 
 @end
