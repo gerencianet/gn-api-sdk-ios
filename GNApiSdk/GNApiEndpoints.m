@@ -7,52 +7,54 @@
 //
 
 #import "GNApiEndpoints.h"
+#import "RSA.h"
+
+@interface GNApiEndpoints ()
+
+@property (strong, nonatomic) NSString *rsaKey;
+
+@end
 
 @implementation GNApiEndpoints
 
 NSString *const kGNApiRoutePaymentData = @"/installments";
 NSString *const kGNApiRouteSaveCard = @"/card";
+NSString *const kGNApiRoutePublicRSAKey = @"/pubkey";
 
-- (void)fetchPaymentDataWithMethod:(GNMethod *)method {
-    [self fetchPaymentDataWithMethod:method completion:^(GNPaymentData *paymentData, GNError *error) {
-        if(_delegate && [_delegate respondsToSelector:@selector(gnApiFetchPaymentDataFinished:error:)]){
-            [_delegate gnApiFetchPaymentDataFinished:paymentData error:error];
-        }
-    }];
-}
-
-- (void)fetchPaymentDataWithMethod:(GNMethod *)method completion:(void (^)(GNPaymentData *paymentData, GNError *error))completion {
+- (PMKPromise *)fetchPaymentDataWithMethod:(GNMethod *)method {
     NSDictionary *params = [method paramsDicionary];
-    [self request:kGNApiRoutePaymentData method:@"GET" params:params callback:^(NSDictionary *response, GNError *error) {
-        if(completion){
-            GNPaymentData *paymentData;
-            if(!error){
-                paymentData = [[GNPaymentData alloc] initWithMethod:method dictionary:response];
-            }
-            completion(paymentData, error);
-        }
-    }];
+    return [self request:kGNApiRoutePaymentData method:@"GET" params:params]
+    .then(^(NSDictionary *response){
+        return [[GNPaymentData alloc] initWithMethod:method dictionary:response];
+    });
 }
 
-- (void)paymentTokenForCreditCard:(GNCreditCard *)creditCard {
-    [self paymentTokenForCreditCard:creditCard completion:^(GNPaymentToken *paymentToken, GNError *error) {
-        if(_delegate && [_delegate respondsToSelector:@selector(gnApiPaymentTokenForCreditCardFinished:error:)]){
-            [_delegate gnApiPaymentTokenForCreditCardFinished:paymentToken error:error];
-        }
-    }];
+- (PMKPromise *)paymentTokenForCreditCard:(GNCreditCard *)creditCard {
+    NSDictionary *cardDict = [creditCard paramsDicionary];
+    NSString *jsonCard = [self getJSONStringFromDictionary:cardDict];
+    
+    return [self encryptData:jsonCard]
+    .then(^(NSString *encryptedData){
+        NSDictionary *params = @{@"data":encryptedData};
+        return [self request:kGNApiRouteSaveCard method:@"POST" params:params];
+    })
+    .then(^(NSDictionary *response){
+        return [[GNPaymentToken alloc] initWithDictionary:response];
+    });
 }
 
-- (void)paymentTokenForCreditCard:(GNCreditCard *)creditCard completion:(void (^)(GNPaymentToken *, GNError *))completion {
-    NSDictionary *params = [creditCard paramsDicionary];
-    [self request:kGNApiRouteSaveCard method:@"POST" params:params callback:^(NSDictionary *response, GNError *error) {
-        if(completion){
-            GNPaymentToken *paymentToken;
-            if(!error){
-                paymentToken = [[GNPaymentToken alloc] initWithDictionary:response];
-            }
-            completion(paymentToken, error);
-        }
-    }];
+- (PMKPromise *) encryptData:(NSString *)data {
+    if (!self.rsaKey) {
+        return [self request:kGNApiRoutePublicRSAKey method:@"GET" params:nil]
+        .then(^(NSDictionary *response){
+            self.rsaKey = response[@"data"];
+            return [RSA encryptString:data publicKey:self.rsaKey];
+        });
+    } else {
+        return [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
+            fulfill([RSA encryptString:data publicKey:self.rsaKey]);
+        }];
+    }
 }
 
 - (NSString *) getJSONStringFromDictionary:(NSDictionary *)dict {

@@ -17,6 +17,7 @@
 		FF62F4C91AF8DAB00060DF03 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF62F4C11AF8DAB00060DF03 /* Images.xcassets */; };
 		FF62F4CB1AF8DAB00060DF03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF62F4C31AF8DAB00060DF03 /* main.m */; };
 		FF62F4CC1AF8DAB00060DF03 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF62F4C51AF8DAB00060DF03 /* ViewController.m */; };
+		FF6F5A4D1BB192C0009CE552 /* RSA.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6F5A4C1BB192C0009CE552 /* RSA.m */; };
 		FF727A601B0E0D6300FAE890 /* GNPaymentData.m in Sources */ = {isa = PBXBuildFile; fileRef = FF727A5F1B0E0D6300FAE890 /* GNPaymentData.m */; };
 		FFA4B5E51AF8E95200C50DAB /* GNInstallment.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA4B5E41AF8E95200C50DAB /* GNInstallment.m */; };
 		FFA4B5E81AF8EB6000C50DAB /* GNPaymentToken.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA4B5E71AF8EB6000C50DAB /* GNPaymentToken.m */; };
@@ -73,6 +74,8 @@
 		FF62F4C41AF8DAB00060DF03 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		FF62F4C51AF8DAB00060DF03 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FF62F4D11AF8DBCF0060DF03 /* GNApiSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNApiSdk.h; sourceTree = "<group>"; };
+		FF6F5A4B1BB192C0009CE552 /* RSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSA.h; sourceTree = "<group>"; };
+		FF6F5A4C1BB192C0009CE552 /* RSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSA.m; sourceTree = "<group>"; };
 		FF727A5E1B0E0D6300FAE890 /* GNPaymentData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNPaymentData.h; sourceTree = "<group>"; };
 		FF727A5F1B0E0D6300FAE890 /* GNPaymentData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNPaymentData.m; sourceTree = "<group>"; };
 		FF7A6F5F1B3B27B7009743D9 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,8 +203,18 @@
 				FF62F4D11AF8DBCF0060DF03 /* GNApiSdk.h */,
 				FFA4B5FB1AF8F52000C50DAB /* Endpoints */,
 				FFA4B5DF1AF8DF8700C50DAB /* Models */,
+				FF6F5A4A1BB19288009CE552 /* Libs */,
 			);
 			path = GNApiSdk;
+			sourceTree = "<group>";
+		};
+		FF6F5A4A1BB19288009CE552 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				FF6F5A4B1BB192C0009CE552 /* RSA.h */,
+				FF6F5A4C1BB192C0009CE552 /* RSA.m */,
+			);
+			name = Libs;
 			sourceTree = "<group>";
 		};
 		FF7A6F601B3B27B7009743D9 /* Tests */ = {
@@ -473,6 +486,7 @@
 				FF62F4CB1AF8DAB00060DF03 /* main.m in Sources */,
 				FFA4B5E51AF8E95200C50DAB /* GNInstallment.m in Sources */,
 				FFA4B5FA1AF8F33F00C50DAB /* GNCreditCard.m in Sources */,
+				FF6F5A4D1BB192C0009CE552 /* RSA.m in Sources */,
 				FF62F4C61AF8DAB00060DF03 /* AppDelegate.m in Sources */,
 				FFA4B5E81AF8EB6000C50DAB /* GNPaymentToken.m in Sources */,
 				FFA4B60D1AF9137E00C50DAB /* GNApiEndpoints.m in Sources */,

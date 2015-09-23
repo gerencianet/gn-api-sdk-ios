@@ -10,16 +10,17 @@
 
 @implementation GNError
 
+NSString *const kGNErrorApiDomain = @"GNErrorApiDomain";
+
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
-    self = [super init];
-    _code = [dictionary objectForKey:@"code"];
+    NSInteger code = [[dictionary objectForKey:@"code"] integerValue];
+    self = [super initWithDomain:kGNErrorApiDomain code:code userInfo:nil];
     _message = [self stringFromErrorObject: [dictionary objectForKey:@"error_description"]];
     return self;
 }
 
-- (instancetype)initWithCode:(NSNumber *)code message:(NSString *)message {
-    self = [super init];
-    _code = code;
+- (instancetype)initWithCode:(NSInteger)code message:(NSString *)message {
+    self = [super initWithDomain:kGNErrorApiDomain code:code userInfo:nil];
     _message = message;
     return self;
 }

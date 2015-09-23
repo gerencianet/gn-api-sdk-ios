@@ -11,7 +11,7 @@
 #import "RegexKitLite.h"
 
 
-@interface ViewController () <GNApiEndpointsDelegate>
+@interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *methodBrandControl;
 @property (weak, nonatomic) IBOutlet UITextField *totalValueTextField;
@@ -38,7 +38,6 @@
     
     GNConfig *gnConfig = [[GNConfig alloc] initWithAccountCode:@"YOUR_ACCOUNT_CODE" sandbox:YES];
     _gnApi = [[GNApiEndpoints alloc] initWithConfig:gnConfig];
-    _gnApi.delegate = self;
 }
 
 
@@ -56,7 +55,30 @@
         totalValue = @(totalValue.doubleValue * 100);
         
         GNMethod *gnMethod = [[GNMethod alloc] initWithBrand:methodBrand total:totalValue];
-        [_gnApi fetchPaymentDataWithMethod:gnMethod];
+        
+        
+        // API call and response handling
+        [_gnApi fetchPaymentDataWithMethod:gnMethod]
+        .then(^(GNPaymentData *paymentData) {
+            [self setLoading:NO];
+            NSString *response = [NSString stringWithFormat:@"Method Brand: %@\n", paymentData.methodBrand];
+            if(paymentData.installments.count==0){
+                response = [NSString stringWithFormat:@"%@Total: R$%.2f\nRate: R$%.2f", response, paymentData.total.doubleValue/100, paymentData.rate.doubleValue/100];
+            }
+            else {
+                response = [response stringByAppendingString:@"Installments:\n"];
+                for(GNInstallment *installment in paymentData.installments){
+                    response = [NSString stringWithFormat:@"%@%dx R$%.2f\n", response, installment.parcels.intValue, installment.value.doubleValue/100 ];
+                }
+            }
+            
+            _serverResponseLabel.text = [NSString stringWithFormat:@"Route: /installments\n%@", response];
+        })
+        .catch(^(GNError *error) {
+            [self setLoading:NO];
+            _serverResponseLabel.text = [NSString stringWithFormat:@"Route: /installments\nError: %ld - %@", (long)error.code, error.message];
+        });
+        
         [self setLoading:YES];
         [self.view endEditing:YES];
     }
@@ -71,42 +93,19 @@
         creditCard.expirationYear = _yearTextField.text;
         creditCard.cvv = _cvvTextField.text;
         
-        [_gnApi paymentTokenForCreditCard:creditCard];
+        // API call and response handling
+        [_gnApi paymentTokenForCreditCard:creditCard]
+        .then(^(GNPaymentToken *paymentToken) {
+            [self setLoading:NO];
+            _serverResponseLabel.text = [NSString stringWithFormat:@"Route: /card\nYour payment token for the card %@ is %@", paymentToken.cardMask, paymentToken.token];
+        })
+        .catch(^(GNError *error){
+            [self setLoading:NO];
+            _serverResponseLabel.text = [NSString stringWithFormat:@"Route: /card\nError: %ld - %@", (long)error.code, error.message];
+        });
+        
         [self setLoading:YES];
         [self.view endEditing:YES];
-    }
-}
-
-
-# pragma mark - GNApiEndpointsDelegate
-
-- (void)gnApiFetchPaymentDataFinished:(GNPaymentData *)paymentData error:(GNError *)error {
-    [self setLoading:NO];
-    if(!error){
-        NSString *response = [NSString stringWithFormat:@"Method Brand: %@\n", paymentData.methodBrand];
-        if(paymentData.installments.count==0){
-            response = [NSString stringWithFormat:@"%@Total: R$%.2f\nRate: R$%.2f", response, paymentData.total.doubleValue/100, paymentData.rate.doubleValue/100];
-        }
-        else {
-            response = [response stringByAppendingString:@"Installments:\n"];
-            for(GNInstallment *installment in paymentData.installments){
-                response = [NSString stringWithFormat:@"%@%dx R$%.2f\n", response, installment.parcels.intValue, installment.value.doubleValue/100 ];
-            }
-        }
-        
-        _serverResponseLabel.text = [NSString stringWithFormat:@"Route: /installments\n%@", response];
-    } else {
-        _serverResponseLabel.text = [NSString stringWithFormat:@"Route: /installments\nError: %d - %@", error.code.intValue, error.message];
-    }
-}
-
-- (void)gnApiPaymentTokenForCreditCardFinished:(GNPaymentToken *)paymentToken error:(GNError *)error {
-    [self setLoading:NO];
-    if(!error){
-        _serverResponseLabel.text = [NSString stringWithFormat:@"Route: /card\nYour payment token for the card %@ is %@", paymentToken.cardMask, paymentToken.token];
-    }
-    else {
-        _serverResponseLabel.text = [NSString stringWithFormat:@"Route: /card\nError: %d - %@", error.code.intValue, error.message];
     }
 }
 

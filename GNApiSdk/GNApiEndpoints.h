@@ -14,23 +14,9 @@
 #import "GNPaymentToken.h"
 
 
-@protocol GNApiEndpointsDelegate <NSObject>
-
-@optional
-- (void) gnApiFetchPaymentDataFinished:(GNPaymentData *)paymentData error:(GNError *)error;
-- (void) gnApiPaymentTokenForCreditCardFinished:(GNPaymentToken *)paymentToken error:(GNError *)error;
-
-@end
-
-
 @interface GNApiEndpoints : GNApiClient
 
-@property (weak, nonatomic) id<GNApiEndpointsDelegate> delegate;
-
-- (void)fetchPaymentDataWithMethod:(GNMethod *)method;
-- (void)fetchPaymentDataWithMethod:(GNMethod *)method completion:(void (^)(GNPaymentData *paymentData, GNError *error))completion;
-
-- (void)paymentTokenForCreditCard:(GNCreditCard *)creditCard;
-- (void)paymentTokenForCreditCard:(GNCreditCard *)creditCard completion:(void (^)(GNPaymentToken *paymentToken, GNError *error))completion;
+- (PMKPromise *)fetchPaymentDataWithMethod:(GNMethod *)method;
+- (PMKPromise *)paymentTokenForCreditCard:(GNCreditCard *)creditCard;
 
 @end

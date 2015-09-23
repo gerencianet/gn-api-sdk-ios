@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <AFNetworking/AFNetworking.h>
+#import <PromiseKit/PromiseKit.h>
 #import "GNConfig.h"
 #import "GNError.h"
 
@@ -16,7 +17,7 @@
 @property (strong, nonatomic) GNConfig *config;
 
 - (instancetype) initWithConfig:(GNConfig *)config;
-- (void) request:(NSString *)route method:(NSString *)method params:(NSDictionary *)params callback:(void (^)(NSDictionary *, GNError *))callback;
+- (PMKPromise *) request:(NSString *)route method:(NSString *)method params:(NSDictionary *)params;
 
 extern NSString *const kGNApiBaseUrlProduction;
 extern NSString *const kGNApiBaseUrlSandbox;

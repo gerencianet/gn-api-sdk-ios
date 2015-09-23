@@ -15,6 +15,7 @@ provided by [Gerencianet](http://gerencianet.com.br).
 
 ### Dependencies
 * [AFNetworking](https://github.com/AFNetworking/AFNetworking)
+* [PromiseKit](https://github.com/mxcl/PromiseKit)
 
 ### Installation
 **Via [CocoaPods](http://cocoapods.org):**
@@ -52,16 +53,16 @@ creditCard.expirationMonth = @"05";
 creditCard.expirationYear = @"2018";
 creditCard.cvv = @"123";
 
-[gnApi paymentTokenForCreditCard:creditCard completion:^(GNPaymentToken *paymentToken, GNError *error) {
-    if(!error){
-        NSLog(@"%@", paymentToken.token);
-    }
-}];
+[gnApi paymentTokenForCreditCard:creditCard]
+.then(^(GNPaymentToken *paymentToken){
+NSLog(@"%@", paymentToken.token);
+})
+.catch(^(GNError *error){
+NSLog(@"An error occurred: %@", error.message);
+});
 ```
 
-> `GNApiEndpoints` provides two signatures for each api method.
-> So you can use either blocks or delegates to receive callbacks.
-> An example of how to use the `GNApiEndpointsDelegate` protocol can be found in the `Example/` directory.
+> `GNApiEndpoints` methods always returns a promise object provided by [PromiseKit](http://promisekit.org/) library.
 
 You can also get the installments before getting the payment token. 
 All you need is the total amount and the method brand:
@@ -69,7 +70,13 @@ All you need is the total amount and the method brand:
 ```objective-c
 // The following code will fetch installments for a total of R$10,00 with MasterCard card brand.
 GNMethod *method = [[GNMethod alloc] initWithBrand:kGNMethodBrandMasterCard total:@(1000)];
-[_gnApi fetchPaymentDataWithMethod:method];
+[_gnApi fetchPaymentDataWithMethod:method]
+.then(^(GNPaymentData *paymentData){
+NSLog(@"%@", paymentData);
+})
+.catch(^(GNError *error){
+NSLog(@"An error occurred: %@", error.message);
+});
 ```
 
 If you want to get the payment data for a banking billet instead of a credit card you just need to init the `GNMethod` object with the brand `kGNMethodBrandBankingBillet`.

@@ -20,7 +20,7 @@ NSString *const kGNApiBaseUrlSandbox = @"https://sandbox.gerencianet.com.br/v1";
     return self;
 }
 
-- (void) request:(NSString *)route method:(NSString *)method params:(NSDictionary *)params callback:(void (^)(NSDictionary *, GNError *))callback {
+- (PMKPromise *) request:(NSString *)route method:(NSString *)method params:(NSDictionary *)params {
     if(!_config.accountCode){
         [NSException raise:@"Account code not defined" format:@"Please setup your GN account code before making requests"];
     }
@@ -28,27 +28,27 @@ NSString *const kGNApiBaseUrlSandbox = @"https://sandbox.gerencianet.com.br/v1";
     NSString *url = [NSString stringWithFormat:@"%@%@", (_config.sandbox ? kGNApiBaseUrlSandbox : kGNApiBaseUrlProduction), route];
     AFHTTPRequestOperationManager *httpManager = [AFHTTPRequestOperationManager manager];
     [httpManager.requestSerializer setValue:_config.accountCode forHTTPHeaderField:@"account-code"];
-    httpManager.securityPolicy.allowInvalidCertificates = YES;
     
-    id successBlock = ^(AFHTTPRequestOperation *operation, id responseObject) {
-        if(callback){
+    return [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
+        
+        id successBlock = ^(AFHTTPRequestOperation *operation, id responseObject) {
             NSError *err = nil;
             NSDictionary *responseDict = [NSJSONSerialization JSONObjectWithData:operation.responseData options:NSJSONReadingMutableContainers error:&err];
             GNError *gnApiErr = nil;
             if(err){
-                gnApiErr = [[GNError alloc] initWithCode:@(500) message:@"Invalid response data."];
-                responseDict = nil;
+                gnApiErr = [[GNError alloc] initWithCode:500 message:@"Invalid response data."];
+                reject(gnApiErr);
             }
             else if([responseDict objectForKey:@"error"]){
                 gnApiErr = [[GNError alloc] initWithDictionary:responseDict];
-                responseDict = nil;
+                reject(gnApiErr);
             }
-            callback(responseDict, gnApiErr);
-        }
-    };
-    
-    id errorBlock = ^(AFHTTPRequestOperation *operation, NSError *error) {
-        if(callback){
+            else {
+                fulfill(responseDict);
+            }
+        };
+        
+        id failureBlock = ^(AFHTTPRequestOperation *operation, NSError *error) {
             NSError *err;
             NSDictionary *responseDict;
             GNError *gnApiErr;
@@ -58,18 +58,19 @@ NSString *const kGNApiBaseUrlSandbox = @"https://sandbox.gerencianet.com.br/v1";
             if(!err && responseDict){
                 gnApiErr = [[GNError alloc] initWithDictionary:responseDict];
             } else {
-                gnApiErr = [[GNError alloc] initWithCode:@(500) message:@"Invalid response data."];
+                gnApiErr = [[GNError alloc] initWithCode:500 message:@"Invalid response data."];
             }
             
-            callback(nil, gnApiErr);
+            reject(gnApiErr);
+        };
+        
+        
+        if ([method isEqualToString:@"POST"]) {
+            [httpManager POST:url parameters:params success:successBlock failure:failureBlock];
+        } else if ([method isEqualToString:@"GET"]) {
+            [httpManager GET:url parameters:params success:successBlock failure:failureBlock];
         }
-    };
-    
-    if ([method isEqualToString:@"POST"]) {
-        [httpManager POST:url parameters:params success:successBlock failure:errorBlock];
-    } else if ([method isEqualToString:@"GET"]) {
-        [httpManager GET:url parameters:params success:successBlock failure:errorBlock];
-    }
+    }];
 }
 
 @end

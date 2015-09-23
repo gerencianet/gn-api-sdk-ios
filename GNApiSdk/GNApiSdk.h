@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <PromiseKit/PromiseKit.h>
 #import "GNApiEndpoints.h"
 #import "GNConfig.h"
 #import "GNPaymentData.h"

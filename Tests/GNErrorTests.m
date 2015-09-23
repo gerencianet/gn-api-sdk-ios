@@ -16,9 +16,9 @@
 @implementation GNErrorTests
 
 - (void)testInitWithCodeAndString {
-    GNError *error = [[GNError alloc] initWithCode:@(404) message:@"Not found"];
+    GNError *error = [[GNError alloc] initWithCode:404 message:@"Not found"];
     XCTAssertNotNil(error, @"GNError instance should not be nil");
-    XCTAssertEqualObjects(error.code, @(404), @"error code should be equal 404");
+    XCTAssertEqual(error.code, 404, @"error code should be equal 404");
     XCTAssertEqualObjects(error.message, @"Not found", @"error message should be equal to 'Not found'");
 }
 
@@ -26,7 +26,7 @@
     NSDictionary *errorDict = @{ @"code":@(500), @"error_description":@"Server error"};
     GNError *error = [[GNError alloc] initWithDictionary:errorDict];
     XCTAssertNotNil(error, @"GNError instance should not be nil");
-    XCTAssertEqualObjects(error.code, @(500));
+    XCTAssertEqual(error.code, 500);
     XCTAssertEqualObjects(error.message, @"Server error");
 }
 

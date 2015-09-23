@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface GNError : NSObject
+@interface GNError : NSError
 
-@property (strong, nonatomic, readonly) NSNumber *code;
 @property (strong, nonatomic, readonly) NSString *message;
 
 - (instancetype) initWithDictionary:(NSDictionary *)dictionary;
-- (instancetype) initWithCode:(NSNumber *)code message:(NSString *)message;
+- (instancetype) initWithCode:(NSInteger)code message:(NSString *)message;
+
+extern NSString *const kGNErrorApiDomain;
 
 @end
