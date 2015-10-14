@@ -8,7 +8,6 @@ target 'GNApiSdk' do
 end
 
 target 'Tests' do
-    pod "AFNetworking", "~> 2.5"
     pod "OCMock", "~> 3.1"
     pod "Nocilla"
 end

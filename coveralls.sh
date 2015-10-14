@@ -43,12 +43,11 @@ rm -r gcov
 
 main()
 {
-
 # generate + copy
 generateGcov
 copyGcovToProjectDir
 # post
-coveralls ${@+"$@"} --exclude Pods --exclude Tests --exclude Example --exclude-pattern ".*\.h"
+coveralls ${@+"$@"} --exclude Pods --exclude Tests --exclude Example --exclude-pattern ".*\.h" --exclude GNApiSdk/Libs
 # clean up
 removeGcov
 }

@@ -1,10 +1,14 @@
 language: objective-c
+
 before_install:
-- chmod +x coveralls.sh
-- sudo easy_install cpp-coveralls
+- gem install cocoapods -v 0.37.2
 - pod install
 - xctool clean build
+- chmod +x coveralls.sh
+- sudo easy_install cpp-coveralls
+
 script:
 - xctool test -freshSimulator -freshInstall ONLY_ACTIVE_ARCH=NO GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES
+
 after_success:
 - ./coveralls.sh
