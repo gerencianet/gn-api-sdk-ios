@@ -9,12 +9,6 @@
 #import "GNApiEndpoints.h"
 #import "RSA.h"
 
-@interface GNApiEndpoints ()
-
-@property (strong, nonatomic) NSString *rsaKey;
-
-@end
-
 @implementation GNApiEndpoints
 
 NSString *const kGNApiRoutePaymentData = @"/installments";
@@ -44,17 +38,19 @@ NSString *const kGNApiRoutePublicRSAKey = @"/pubkey";
 }
 
 - (PMKPromise *) encryptData:(NSString *)data {
-    if (!self.rsaKey) {
-        return [self request:kGNApiRoutePublicRSAKey method:@"GET" params:nil]
+    return [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
+        [self request:kGNApiRoutePublicRSAKey method:@"GET" params:nil]
         .then(^(NSDictionary *response){
-            self.rsaKey = response[@"data"];
-            return [RSA encryptString:data publicKey:self.rsaKey];
+            NSString *rsaKey = response[@"data"];
+            if (rsaKey) {
+                NSString *encryptedData = [RSA encryptString:data publicKey:rsaKey];
+                fulfill(encryptedData);
+            } else {
+                GNError *err = [[GNError alloc] initWithCode:500 message:@"Could not retrieve the public key"];
+                reject(err);
+            }
         });
-    } else {
-        return [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
-            fulfill([RSA encryptString:data publicKey:self.rsaKey]);
-        }];
-    }
+    }];
 }
 
 - (NSString *) getJSONStringFromDictionary:(NSDictionary *)dict {
