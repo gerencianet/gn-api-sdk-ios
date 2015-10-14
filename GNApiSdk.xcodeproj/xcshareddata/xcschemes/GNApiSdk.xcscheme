@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "85850472E53AC90C8710141232204197"
-               BuildableName = "libPromiseKit.a"
-               BlueprintName = "PromiseKit"
+               BlueprintIdentifier = "F802C8FF0C9A35096A9AA188A1FA6A2D"
+               BuildableName = "libPods-GNApiSdk.a"
+               BlueprintName = "Pods-GNApiSdk"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,37 +28,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8B7E35EFC2EB105F5BC6BA58F9DE3E82"
-               BuildableName = "libRegexKitLite.a"
-               BlueprintName = "RegexKitLite"
-               ReferencedContainer = "container:Pods/Pods.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8D56434A65402133649022F4DED034A1"
-               BuildableName = "libOMGHTTPURLRQ.a"
-               BlueprintName = "OMGHTTPURLRQ"
-               ReferencedContainer = "container:Pods/Pods.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8F3ACA89B32DE563FC03BF50F00F5C49"
-               BuildableName = "libAFNetworking.a"
-               BlueprintName = "AFNetworking"
+               BlueprintIdentifier = "7C4EA4B85E046AE1FDA3634CB02773F4"
+               BuildableName = "libPods-Tests.a"
+               BlueprintName = "Pods-Tests"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
