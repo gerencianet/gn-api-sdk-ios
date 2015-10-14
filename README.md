@@ -14,6 +14,7 @@ provided by [Gerencianet](http://gerencianet.com.br).
 * ARC
 
 ### Dependencies
+* [RegexKitLite](http://regexkit.sourceforge.net/)
 * [AFNetworking](https://github.com/AFNetworking/AFNetworking)
 * [PromiseKit](https://github.com/mxcl/PromiseKit)
 
