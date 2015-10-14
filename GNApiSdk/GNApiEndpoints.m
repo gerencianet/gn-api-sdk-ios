@@ -38,22 +38,11 @@ NSString *const kGNApiRoutePublicRSAKey = @"/pubkey";
 }
 
 - (PMKPromise *) encryptData:(NSString *)data {
-    return [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
-        [self request:kGNApiRoutePublicRSAKey method:@"GET" params:nil]
-        .then(^(NSDictionary *response){
-            NSString *rsaKey = response[@"data"];
-            if (rsaKey) {
-                NSString *encryptedData = [RSA encryptString:data publicKey:rsaKey];
-                fulfill(encryptedData);
-            } else {
-                GNError *err = [[GNError alloc] initWithCode:500 message:@"Could not retrieve the public key"];
-                reject(err);
-            }
-        })
-        .catch(^(GNError *error) {
-            reject(error);
-        });
-    }];
+    return [self request:kGNApiRoutePublicRSAKey method:@"GET" params:nil]
+    .then(^(NSDictionary *response){
+        NSString *rsaKey = response[@"data"];
+        return [RSA encryptString:data publicKey:rsaKey];
+    });
 }
 
 - (NSString *) getJSONStringFromDictionary:(NSDictionary *)dict {

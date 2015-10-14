@@ -131,23 +131,8 @@
         XCTFail(@"card request should return error");
     })
     .catch(^(GNError *error){
-        XCTAssertNotNil(error, @"error should not be nil");
-        
-        [[LSNocilla sharedInstance] clearStubs];
-        _pubkeyStub = stubRequest(@"GET", [NSString stringWithFormat:@"%@%@", kGNApiBaseUrlSandbox, @"/pubkey"]);
-        _pubkeyStub.andReturn(200)
-        .withBody(@"{\"code\": 200}")
-        .withHeaders(@{@"Content-Type": @"application/json"});
-        
-        return [_gnApi paymentTokenForCreditCard:_creditCard]
-        .then(^(GNPaymentData *paymentData){
-            [_apiExpectation fulfill];
-            XCTFail(@"pubkey request should return error");
-        })
-        .catch(^(GNError *error){
-            [_apiExpectation fulfill];
-            XCTAssertEqualObjects(error.message, @"Could not retrieve the public key", @"error message should be 'Could not retrieve the public key'");
-        });
+        [_apiExpectation fulfill];
+        XCTAssertEqualObjects(error.message, @"Invalid response data.", @"error message should be 'Invalid response data.'");
     });
     
     [self waitForExpectationsWithTimeout:3.0 handler:nil];
