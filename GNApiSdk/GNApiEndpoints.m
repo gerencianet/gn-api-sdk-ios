@@ -49,6 +49,9 @@ NSString *const kGNApiRoutePublicRSAKey = @"/pubkey";
                 GNError *err = [[GNError alloc] initWithCode:500 message:@"Could not retrieve the public key"];
                 reject(err);
             }
+        })
+        .catch(^(GNError *error) {
+            reject(error);
         });
     }];
 }
