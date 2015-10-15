@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2A9D2CC45518E2CD452D1DDD /* libPods-GNApiSdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C59FE9B22783C1CA1F8A137 /* libPods-GNApiSdk.a */; };
 		8D952F32FC0C123011830D80 /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FF839B7D3FE6731B6DB08C /* libPods-Tests.a */; };
-		FF0EF3D21BCEA726005B2248 /* RSA.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0EF3D11BCEA726005B2248 /* RSA.m */; };
+		FF1269851BCFC1E600A2CB02 /* RSA.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1269841BCFC1E600A2CB02 /* RSA.m */; };
 		FF1D2D531AFBAE5400BBD16D /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FF1D2D521AFBAE5400BBD16D /* libicucore.dylib */; };
 		FF56FB7B1B3DE5C0000BB76D /* GNApiEndpointsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF56FB7A1B3DE5C0000BB76D /* GNApiEndpointsTests.m */; };
 		FF62F4C61AF8DAB00060DF03 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF62F4BC1AF8DAB00060DF03 /* AppDelegate.m */; };
@@ -61,8 +61,8 @@
 		96FF839B7D3FE6731B6DB08C /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D46718E3172DB1E23588F59 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D131B6D8DB6BC5392AB75770 /* Pods-GNApiSdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GNApiSdk.release.xcconfig"; path = "Pods/Target Support Files/Pods-GNApiSdk/Pods-GNApiSdk.release.xcconfig"; sourceTree = "<group>"; };
-		FF0EF3D01BCEA726005B2248 /* RSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSA.h; path = Vendor/RSA.h; sourceTree = "<group>"; };
-		FF0EF3D11BCEA726005B2248 /* RSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSA.m; path = Vendor/RSA.m; sourceTree = "<group>"; };
+		FF1269831BCFC1E600A2CB02 /* RSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSA.h; sourceTree = "<group>"; };
+		FF1269841BCFC1E600A2CB02 /* RSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSA.m; sourceTree = "<group>"; };
 		FF1D2D521AFBAE5400BBD16D /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		FF56FB7A1B3DE5C0000BB76D /* GNApiEndpointsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNApiEndpointsTests.m; sourceTree = "<group>"; };
 		FF62F47E1AF8DA540060DF03 /* GNApiSdk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GNApiSdk.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,20 +159,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		FF0EF3CF1BCEA715005B2248 /* Vendor */ = {
+		FF1269821BCFC1A900A2CB02 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				FF0EF3D01BCEA726005B2248 /* RSA.h */,
-				FF0EF3D11BCEA726005B2248 /* RSA.m */,
+				FF1269831BCFC1E600A2CB02 /* RSA.h */,
+				FF1269841BCFC1E600A2CB02 /* RSA.m */,
 			);
-			name = Vendor;
+			name = Libs;
 			sourceTree = "<group>";
 		};
 		FF62F4751AF8DA540060DF03 = {
 			isa = PBXGroup;
 			children = (
 				FF62F4CD1AF8DBA10060DF03 /* GNApiSdk */,
-				FF0EF3CF1BCEA715005B2248 /* Vendor */,
 				FFED92E41B388D27007B5CC5 /* Metadata */,
 				FF62F4BA1AF8DAB00060DF03 /* Example */,
 				FF7A6F601B3B27B7009743D9 /* Tests */,
@@ -213,6 +212,7 @@
 				FF62F4D11AF8DBCF0060DF03 /* GNApiSdk.h */,
 				FFA4B5FB1AF8F52000C50DAB /* Endpoints */,
 				FFA4B5DF1AF8DF8700C50DAB /* Models */,
+				FF1269821BCFC1A900A2CB02 /* Libs */,
 			);
 			path = GNApiSdk;
 			sourceTree = "<group>";
@@ -486,7 +486,7 @@
 				FF62F4CB1AF8DAB00060DF03 /* main.m in Sources */,
 				FFA4B5E51AF8E95200C50DAB /* GNInstallment.m in Sources */,
 				FFA4B5FA1AF8F33F00C50DAB /* GNCreditCard.m in Sources */,
-				FF0EF3D21BCEA726005B2248 /* RSA.m in Sources */,
+				FF1269851BCFC1E600A2CB02 /* RSA.m in Sources */,
 				FF62F4C61AF8DAB00060DF03 /* AppDelegate.m in Sources */,
 				FFA4B5E81AF8EB6000C50DAB /* GNPaymentToken.m in Sources */,
 				FFA4B60D1AF9137E00C50DAB /* GNApiEndpoints.m in Sources */,

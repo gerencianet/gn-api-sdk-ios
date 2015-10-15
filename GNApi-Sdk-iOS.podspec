@@ -1,5 +1,4 @@
 Pod::Spec.new do |s|
- 
     s.name         = "GNApi-Sdk-iOS"
     s.version      = "0.2.6"
     s.summary      = "A simple lib for easy integration of your mobile app with the payment services provided by Gerencianet."
@@ -13,5 +12,4 @@ Pod::Spec.new do |s|
     s.dependency "AFNetworking", "2.5"
     s.dependency "PromiseKit", "~> 1.5"
     s.dependency "RegexKitLite"
- 
 end
