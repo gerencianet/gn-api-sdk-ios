@@ -22,7 +22,7 @@ provided by [Gerencianet](http://gerencianet.com.br).
 **Via [CocoaPods](http://cocoapods.org):**
 
 ```ruby
-pod 'GNApi-Sdk-iOS', '~> 0.2'
+pod 'GNApi-Sdk-iOS', '~> 0.3'
 ```
 
 **Direct download:**
