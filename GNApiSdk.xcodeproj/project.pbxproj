@@ -317,6 +317,7 @@
 				FF62F47B1AF8DA540060DF03 /* Frameworks */,
 				FF62F47C1AF8DA540060DF03 /* Resources */,
 				D3D9EA106F269025130BD68F /* Copy Pods Resources */,
+				E7206D483D164F6FC4F2602C /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -336,6 +337,7 @@
 				FF7A6F5C1B3B27B7009743D9 /* Frameworks */,
 				FF7A6F5D1B3B27B7009743D9 /* Resources */,
 				C291DE2BCFF22C07B91DCFA1 /* Copy Pods Resources */,
+				3362EA1C6EED340834E254C9 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -426,6 +428,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		3362EA1C6EED340834E254C9 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tests/Pods-Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C291DE2BCFF22C07B91DCFA1 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -469,6 +486,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GNApiSdk/Pods-GNApiSdk-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7206D483D164F6FC4F2602C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GNApiSdk/Pods-GNApiSdk-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
