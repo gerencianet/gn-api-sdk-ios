@@ -11,13 +11,13 @@
 
 @implementation GNApiEndpoints
 
-NSString *const kGNApiRoutePaymentData = @"/installments";
+NSString *const kGNApiRouteInstallments = @"/installments";
 NSString *const kGNApiRouteSaveCard = @"/card";
 NSString *const kGNApiRoutePublicRSAKey = @"/pubkey";
 
-- (PMKPromise *)fetchPaymentDataWithMethod:(GNMethod *)method {
+- (PMKPromise *)fetchInstallmentsWithMethod:(GNMethod *)method {
     NSDictionary *params = [method paramsDicionary];
-    return [self request:kGNApiRoutePaymentData method:@"GET" params:params]
+    return [self request:kGNApiRouteInstallments method:@"GET" params:params]
     .then(^(NSDictionary *response){
         return [[GNPaymentData alloc] initWithMethod:method dictionary:response];
     });

@@ -15,7 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *methodBrandControl;
 @property (weak, nonatomic) IBOutlet UITextField *totalValueTextField;
-@property (weak, nonatomic) IBOutlet UIButton *getPaymentDataButton;
+@property (weak, nonatomic) IBOutlet UIButton *getInstallmentsButton;
 
 @property (weak, nonatomic) IBOutlet UITextField *cardNumberTextField;
 @property (weak, nonatomic) IBOutlet UITextField *cvvTextField;
@@ -43,8 +43,8 @@
 
 # pragma mark - IBActions
 
-- (IBAction)onGetPaymentDataButtonPressed {
-    if([self validateGetPaymentData]){
+- (IBAction)onGetInstallmentsButtonPressed {
+    if([self validateGetInstallments]){
         NSArray *methods = @[kGNMethodBrandVisa, kGNMethodBrandMasterCard, kGNMethodBrandBankingBillet];
         NSString *methodBrand = methods[_methodBrandControl.selectedSegmentIndex];
         
@@ -58,7 +58,7 @@
         
         
         // API call and response handling
-        [_gnApi fetchPaymentDataWithMethod:gnMethod]
+        [_gnApi fetchInstallmentsWithMethod:gnMethod]
         .then(^(GNPaymentData *paymentData) {
             [self setLoading:NO];
             NSString *response = [NSString stringWithFormat:@"Method Brand: %@\n", paymentData.methodBrand];
@@ -112,7 +112,7 @@
 
 # pragma mark - Helper
 
-- (BOOL) validateGetPaymentData {
+- (BOOL) validateGetInstallments {
     if(![_totalValueTextField.text isMatchedByRegex:@"^[0-9]+(\\.[0-9]{2})?$"]){
         [self alert:@"Insert a valid total value."];
         return NO;
@@ -147,12 +147,12 @@
 - (void) setLoading:(BOOL)isLoading {
     if(isLoading){
         [_activityIndicator startAnimating];
-        [_getPaymentDataButton setEnabled:NO];
+        [_getInstallmentsButton setEnabled:NO];
         [_getPaymentTokenButton setEnabled:NO];
     }
     else {
         [_activityIndicator stopAnimating];
-        [_getPaymentDataButton setEnabled:YES];
+        [_getInstallmentsButton setEnabled:YES];
         [_getPaymentTokenButton setEnabled:YES];
     }
 }

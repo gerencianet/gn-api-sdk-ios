@@ -71,7 +71,7 @@ All you need is the total amount and the method brand:
 ```objective-c
 // The following code will fetch installments for a total of R$10,00 with MasterCard card brand.
 GNMethod *method = [[GNMethod alloc] initWithBrand:kGNMethodBrandMasterCard total:@(1000)];
-[_gnApi fetchPaymentDataWithMethod:method]
+[_gnApi fetchInstallmentsWithMethod:method]
 .then(^(GNPaymentData *paymentData){
 NSLog(@"%@", paymentData);
 })

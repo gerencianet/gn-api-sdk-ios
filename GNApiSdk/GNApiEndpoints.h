@@ -16,7 +16,7 @@
 
 @interface GNApiEndpoints : GNApiClient
 
-- (PMKPromise *)fetchPaymentDataWithMethod:(GNMethod *)method;
+- (PMKPromise *)fetchInstallmentsWithMethod:(GNMethod *)method;
 - (PMKPromise *)paymentTokenForCreditCard:(GNCreditCard *)creditCard;
 
 @end

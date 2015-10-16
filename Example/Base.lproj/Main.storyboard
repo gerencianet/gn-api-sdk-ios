@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Pkk-uT-hzS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Pkk-uT-hzS">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -30,18 +29,21 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checkout page" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aq4-Bx-BJK">
                                                         <rect key="frame" x="12" y="15" width="94" height="17"/>
+                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart" translatesAutoresizingMaskIntoConstraints="NO" id="YM4-Rs-4rd">
                                                         <rect key="frame" x="402" y="15" width="20" height="17"/>
+                                                        <animations/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="YM4-Rs-4rd" secondAttribute="height" multiplier="73:65" id="5NN-Ym-M4Q"/>
                                                             <constraint firstAttribute="width" constant="20" id="fNX-eM-7Ef"/>
                                                         </constraints>
                                                     </imageView>
                                                 </subviews>
+                                                <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="Aq4-Bx-BJK" firstAttribute="leading" secondItem="lT3-Sh-mCp" secondAttribute="leading" constant="12" id="0ee-Ko-GYS"/>
@@ -56,6 +58,7 @@
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="150.00" borderStyle="roundedRect" placeholder="Total Value" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kGb-RG-z7P">
                                                         <rect key="frame" x="302" y="12" width="120" height="30"/>
+                                                        <animations/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="120" id="vh5-Tp-Xg0"/>
                                                         </constraints>
@@ -64,6 +67,7 @@
                                                     </textField>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IY4-4X-DLz">
                                                         <rect key="frame" x="12" y="13" width="278" height="29"/>
+                                                        <animations/>
                                                         <segments>
                                                             <segment title="Visa"/>
                                                             <segment title="Master"/>
@@ -72,6 +76,7 @@
                                                         <color key="tintColor" red="0.49803921569999998" green="0.80000000000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </segmentedControl>
                                                 </subviews>
+                                                <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="kGb-RG-z7P" secondAttribute="bottom" constant="12" id="DwJ-zB-mpl"/>
@@ -87,20 +92,22 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6J-jq-zjB">
                                                         <rect key="frame" x="272" y="12" width="150" height="30"/>
+                                                        <animations/>
                                                         <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="eMe-K0-RRy"/>
                                                             <constraint firstAttribute="width" constant="150" id="sE7-ON-8N3"/>
                                                         </constraints>
-                                                        <state key="normal" title="Get Payment Data">
+                                                        <state key="normal" title="Get Installments">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="onGetPaymentDataButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="S0e-M2-e4P"/>
+                                                            <action selector="onGetInstallmentsButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="88I-uv-6eR"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="X6J-jq-zjB" secondAttribute="bottom" constant="12" id="3E8-Vh-Y6m"/>
@@ -113,16 +120,19 @@
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="4012001038443335" borderStyle="roundedRect" placeholder="Card number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DcR-aE-xRz">
                                                         <rect key="frame" x="12" y="12" width="292" height="30"/>
+                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123" borderStyle="roundedRect" placeholder="CVV" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iNp-jl-e06">
                                                         <rect key="frame" x="312" y="12" width="110" height="30"/>
+                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="05" borderStyle="roundedRect" placeholder="Month" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YqL-Qa-uJa">
                                                         <rect key="frame" x="12" y="50" width="80" height="30"/>
+                                                        <animations/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="80" id="EAo-Bx-C3i"/>
                                                         </constraints>
@@ -131,6 +141,7 @@
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2018" borderStyle="roundedRect" placeholder="Year" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bZh-D8-yfE">
                                                         <rect key="frame" x="100" y="50" width="80" height="30"/>
+                                                        <animations/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="80" id="GZb-Fi-fbo"/>
                                                         </constraints>
@@ -139,6 +150,7 @@
                                                     </textField>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IB1-Sd-x5K">
                                                         <rect key="frame" x="196" y="50" width="226" height="29"/>
+                                                        <animations/>
                                                         <segments>
                                                             <segment title="Visa"/>
                                                             <segment title="Master"/>
@@ -146,6 +158,7 @@
                                                         <color key="tintColor" red="0.49803921568627452" green="0.80000000000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </segmentedControl>
                                                 </subviews>
+                                                <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="bZh-D8-yfE" firstAttribute="centerY" secondItem="IB1-Sd-x5K" secondAttribute="centerY" constant="1" id="1nJ-Vi-3ie"/>
@@ -169,6 +182,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGh-FM-Spy">
                                                         <rect key="frame" x="272" y="12" width="150" height="30"/>
+                                                        <animations/>
                                                         <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="8cE-RK-W86"/>
@@ -183,6 +197,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="SGh-FM-Spy" firstAttribute="top" secondItem="0n1-n3-8cG" secondAttribute="top" constant="12" id="Ivn-1l-5dz"/>
@@ -195,20 +210,24 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Server Response" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIg-xD-eoc">
                                                         <rect key="frame" x="12" y="8" width="90" height="15"/>
+                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPx-Jv-qR8">
                                                         <rect key="frame" x="12" y="39" width="410" height="0.0"/>
+                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="8mF-4K-PuM">
                                                         <rect key="frame" x="410" y="4" width="20" height="20"/>
+                                                        <animations/>
                                                     </activityIndicatorView>
                                                 </subviews>
+                                                <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="DIg-xD-eoc" firstAttribute="leading" secondItem="yhx-tA-XZZ" secondAttribute="leading" constant="12" id="1AZ-Oe-3Je"/>
@@ -223,12 +242,14 @@
                                             </view>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_2" translatesAutoresizingMaskIntoConstraints="NO" id="8yQ-H5-i56">
                                                 <rect key="frame" x="342" y="459" width="100" height="18"/>
+                                                <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="45k-ZA-2Gy"/>
                                                     <constraint firstAttribute="width" secondItem="8yQ-H5-i56" secondAttribute="height" multiplier="199:36" id="FOw-wd-kow"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
+                                        <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="0n1-n3-8cG" firstAttribute="leading" secondItem="hnX-0a-gIT" secondAttribute="leading" id="4Ma-DK-od0"/>
@@ -255,6 +276,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="VYV-ht-6TC" secondAttribute="bottom" id="1e9-fn-RuS"/>
                                     <constraint firstItem="VYV-ht-6TC" firstAttribute="leading" secondItem="IWz-dw-Kdm" secondAttribute="leading" id="U4e-Lw-dEp"/>
@@ -263,6 +285,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="IWz-dw-Kdm" secondAttribute="trailing" id="1zD-mF-gI3"/>
@@ -281,7 +304,7 @@
                         <outlet property="cardBrandControl" destination="IB1-Sd-x5K" id="10N-eu-oFW"/>
                         <outlet property="cardNumberTextField" destination="DcR-aE-xRz" id="tKL-AP-3Eb"/>
                         <outlet property="cvvTextField" destination="iNp-jl-e06" id="D6A-vc-iNX"/>
-                        <outlet property="getPaymentDataButton" destination="X6J-jq-zjB" id="Swx-av-rYT"/>
+                        <outlet property="getInstallmentsButton" destination="X6J-jq-zjB" id="p9n-jp-Wci"/>
                         <outlet property="getPaymentTokenButton" destination="SGh-FM-Spy" id="d2N-Gk-bB3"/>
                         <outlet property="methodBrandControl" destination="IY4-4X-DLz" id="lt7-VF-5ZW"/>
                         <outlet property="monthTextField" destination="YqL-Qa-uJa" id="jdz-on-OsE"/>
@@ -302,6 +325,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aRO-M3-fxi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
