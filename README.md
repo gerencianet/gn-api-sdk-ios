@@ -95,7 +95,7 @@ The available method brands are defined in the following constants:
 * ```kGNMethodBrandBankingBillet```
 
 This project already includes a sample application.
-To use it just clone this repo, install dependencies with `pod install` and open with XCode. The example requires you to provide your account code.
+To use it just clone this repo, install dependencies with `pod install` and open with Xcode. The example requires you to provide your account code.
 
 ## License
 
