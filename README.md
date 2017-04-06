@@ -3,8 +3,6 @@
 A simple lib for easy integration of your mobile app with the payment services 
 provided by [Gerencianet](http://gerencianet.com.br).
 
-:warning: **This module is under development and is based on the new API that Gerencianet is about to release. It won't work in production by now.**
-
 [![Build Status](https://travis-ci.org/gerencianet/gn-api-sdk-ios.svg)](https://travis-ci.org/gerencianet/gn-api-sdk-ios)
 [![Coverage Status](https://coveralls.io/repos/gerencianet/gn-api-sdk-ios/badge.svg)](https://coveralls.io/r/gerencianet/gn-api-sdk-ios)
 [![Pod version](https://cocoapod-badges.herokuapp.com/v/GNApi-Sdk-iOS/badge.png)](https://cocoapods.org/pods/GNApi-Sdk-iOS)
