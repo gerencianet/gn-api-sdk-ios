@@ -21,10 +21,8 @@ extern NSString *const kGNMethodBrandVisa;
 extern NSString *const kGNMethodBrandMasterCard;
 extern NSString *const kGNMethodBrandAmex;
 extern NSString *const kGNMethodBrandDiners;
-extern NSString *const kGNMethodBrandDiscover;
-extern NSString *const kGNMethodBrandJCB;
 extern NSString *const kGNMethodBrandElo;
-extern NSString *const kGNMethodBrandAura;
+extern NSString *const kGNMethodBrandHipercard;
 extern NSString *const kGNMethodBrandBankingBillet;
 
 @end

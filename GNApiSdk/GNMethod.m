@@ -14,10 +14,8 @@ NSString *const kGNMethodBrandVisa = @"visa";
 NSString *const kGNMethodBrandMasterCard = @"mastercard";
 NSString *const kGNMethodBrandAmex = @"amex";
 NSString *const kGNMethodBrandDiners = @"diners";
-NSString *const kGNMethodBrandDiscover = @"discover";
-NSString *const kGNMethodBrandJCB = @"jcb";
 NSString *const kGNMethodBrandElo = @"elo";
-NSString *const kGNMethodBrandAura = @"aura";
+NSString *const kGNMethodBrandHipercard = @"hipercard";
 NSString *const kGNMethodBrandBankingBillet = @"banking_billet";
 
 - (instancetype)initWithBrand:(NSString *)brand total:(NSNumber *)total {

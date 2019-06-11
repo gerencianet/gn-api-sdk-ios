@@ -86,10 +86,8 @@ The available method brands are defined in the following constants:
 * ```kGNMethodBrandMasterCard```
 * ```kGNMethodBrandAmex```
 * ```kGNMethodBrandDiners```
-* ```kGNMethodBrandDiscover```
-* ```kGNMethodBrandJCB```
 * ```kGNMethodBrandElo```
-* ```kGNMethodBrandAura```
+* ```kGNMethodBrandHipercard```
 * ```kGNMethodBrandBankingBillet```
 
 This project already includes a sample application.
